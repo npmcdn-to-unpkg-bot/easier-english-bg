@@ -720,4 +720,4 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 //Disable the File Editor, Automatic updates and stop users from uploading plugins/themes directly
-//define( 'DISALLOW_FILE_MODS', true );
+define( 'DISALLOW_FILE_MODS', true );
