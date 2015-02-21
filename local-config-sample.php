@@ -11,6 +11,10 @@ define( 'DB_USER', 'local_db_user' );
 define( 'DB_PASSWORD', 'local_db_password' );
 define( 'DB_HOST', 'localhost' ); // Probably 'localhost'
 
+// ==============================================================
+// Salts, for security
+// Grab these from: https://api.wordpress.org/secret-key/1.1/salt
+// ==============================================================
 define('AUTH_KEY',         'yUN6gdM+qTMqci+&# xfU3WHa1m[8i-X{7@2(#wx@,MvBPp=hmUVZ+_>$}6QjqHm');
 define('SECURE_AUTH_KEY',  '(&Po>`,##DQ|-ok)Kd*Y_,F;7M.SM7eKy+d7qDT|~$6Jz;nX%[>>qoa#(Fq3Jyc-');
 define('LOGGED_IN_KEY',    'cU*0N;n^/TrJc /.t7^-%@HB7r,%9$dXi}|GK]Ej,^^XGoO^RsSYz=:#{WO2zU+R');
