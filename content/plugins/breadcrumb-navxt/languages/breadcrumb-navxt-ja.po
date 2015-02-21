@@ -1,154 +1,154 @@
-# Translation of Breadcrumb NavXT in Czech
+# Translation of Breadcrumb NavXT in Japanese
 # This file is distributed under the same license as the Breadcrumb NavXT package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-11-21 02:03:59+0000\n"
+"PO-Revision-Date: 2013-11-21 02:04:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Breadcrumb NavXT\n"
 
 #: class.bcn_network_admin.php:377
 msgid "Breadcrumb NavXT Network Settings"
-msgstr "Síťová nastavení Breadcrumb NavXT"
+msgstr ""
 
 msgid "Adds a breadcrumb navigation showing the visitor&#39;s path to their current location. For details on how to use this plugin visit <a href=\"http://mtekk.us/code/breadcrumb-navxt/\">Breadcrumb NavXT</a>."
-msgstr "Přidá drobečkovou navigaci zobrazující návštěvníkovi cestu k aktuálnímu umístění. Pro podrobnosti k používání tohoto pluginu navštivte <a href=\"http://mtekk.us/code/breadcrumb-navxt/\">Breadcrumb NavXT</a>."
+msgstr ""
 
 #: class.bcn_admin.php:423 class.bcn_admin.php:500
 #: class.bcn_network_admin.php:491 class.bcn_network_admin.php:568
 msgid "The hierarchy which the breadcrumb trail will show. Note that the \"Post Parent\" option may require an additional plugin to behave as expected since this is a non-hierarchical post type."
-msgstr "Struktura, kterou zobrazí řetězec drobečkové navigace. Mějte na paměti, že možnost \"Rodič příspěvku\" může pro korektní fungování vyžadovat další plugin, protože tento typ obsahu není strukturovaný."
+msgstr "パンくずが表示する階層です。\"親投稿\"オプションは階層構造のないタイプなので、、期待どおり動かすためには追加のプラグインが必要です。"
 
 #: class.bcn_breadcrumb.php:67 class.bcn_breadcrumb_trail.php:49
 #: class.bcn_breadcrumb_trail.php:55 class.bcn_breadcrumb_trail.php:61
 #: class.bcn_breadcrumb_trail.php:75 class.bcn_breadcrumb_trail.php:87
 #: class.bcn_breadcrumb_trail.php:99
 msgid "<a title=\"Go to %title%.\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
-msgstr "<a title=\"Zobrazit %title%\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
+msgstr "<a title=\"%title%へ行く\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
 
 #: class.bcn_breadcrumb_trail.php:109
 msgid "Search results for &#39;<a title=\"Go to the first page of search results for %title%.\" href=\"%link%\" class=\"%type%\">%htitle%</a>&#39;"
-msgstr "Výhledky hledání pro &#39;<a title=\"Zobrazit první stránku výsledků hledání pro %title%\" href=\"%link%\" class=\"%type%\">%htitle%</a>&#39;"
+msgstr "&#39;<a title=\"%title%の検索結果の最初のページに行く\" href=\"%link%\" class=\"%type%\">%htitle%</a>&#39;の検索結果"
 
 #: class.bcn_admin.php:321 class.bcn_network_admin.php:389
 msgid "A collection of settings most likely to be modified are located under this tab."
-msgstr "Sestava nastavení, které budete pravděpodobně chtít použít, je zde."
+msgstr "よく変更される設定がこのタブの下にあります。"
 
 #: class.bcn_admin.php:329 class.bcn_network_admin.php:397
 msgid "Title Length"
-msgstr "Délka titulku"
+msgstr "タイトルの長さ"
 
 #: class.bcn_admin.php:334 class.bcn_network_admin.php:402
 msgid "Limit the length of the breadcrumb title."
-msgstr "Omezte délku titulku v názvu drobečkové navigace."
+msgstr "パンくずのタイトルを次の文字数に制限します。"
 
 #: class.bcn_admin.php:377 class.bcn_network_admin.php:445
 msgid "Mainsite Breadcrumb"
-msgstr "Navigace hlavního webu"
+msgstr "メインサイトのパンくず"
 
 #: class.bcn_admin.php:389 class.bcn_network_admin.php:457
 msgid "The settings for all post types (Posts, Pages, and Custom Post Types) are located under this tab."
-msgstr "Nastavení všech typů obsahu jsou umístěna zde (Příspěvky, Stránky a vlastní typy obsahu)."
+msgstr "このタブの下には全ての投稿タイプ(投稿、ページ、カスタム投稿タイプ)の設定があります。"
 
 #: class.bcn_admin.php:389 class.bcn_network_admin.php:457
 msgid "Post Types"
-msgstr "Typy obsahu"
+msgstr "投稿タイプ"
 
 #: class.bcn_admin.php:395 class.bcn_network_admin.php:463
 msgid "Post Hierarchy Display"
-msgstr "Zobrazení hierarchie příspěvku"
+msgstr "投稿階層を表示する"
 
 #: class.bcn_admin.php:399 class.bcn_network_admin.php:467
 msgid "Post Hierarchy"
-msgstr "Hierarchie příspěvku"
+msgstr "投稿階層"
 
 #: class.bcn_admin.php:467 class.bcn_network_admin.php:535
 msgid "%s Hierarchy Display"
-msgstr "Zobrazení hierarchie %s"
+msgstr "%s階層表示"
 
 #: class.bcn_admin.php:529 class.bcn_network_admin.php:597
 msgid "Post Formats"
-msgstr "Formáty příspěvku"
+msgstr "投稿フォーマット"
 
 #: class.bcn_admin.php:339 class.bcn_network_admin.php:407
 msgid "Max Title Length: "
-msgstr "Maximální délka titulku:"
+msgstr "タイトル上限文字数: "
 
 #: class.bcn_admin.php:390 class.bcn_network_admin.php:458
 msgid "Posts"
-msgstr "Příspěvky"
+msgstr "投稿"
 
 #: class.bcn_admin.php:407 class.bcn_admin.php:476
 #: class.bcn_network_admin.php:475 class.bcn_network_admin.php:544
 msgid "Post Parent"
-msgstr "Rodič příspěvku"
+msgstr "親投稿"
 
 #: class.bcn_admin.php:496 class.bcn_network_admin.php:564
 msgid "The hierarchy which the breadcrumb trail will show."
-msgstr "Hierarchie, kterou zobrazí řetězec drobečkové navigace."
+msgstr "パンくずリストが表示する階層です。"
 
 #: class.bcn_admin.php:471 class.bcn_network_admin.php:539
 msgid "%s Hierarchy"
-msgstr "Hierarchie %s"
+msgstr "%s階層"
 
 #: class.bcn_admin.php:514 class.bcn_network_admin.php:582
 msgid "The settings for all taxonomies (including Categories, Tags, and custom taxonomies) are located under this tab."
-msgstr "Nastavení všech taxonomií (včetně Rubrik, Tagů a vlastních taxonomií) jsou umístěna zde."
+msgstr "カテゴリー、タグ、カスタムタクソノミーなどの設定はこのタブをクリックしてください。"
 
 #: class.bcn_admin.php:514 class.bcn_network_admin.php:582
 msgid "Taxonomies"
-msgstr "Taxonomie"
+msgstr "タクソノミー"
 
 #: class.bcn_admin.php:532 class.bcn_network_admin.php:600
 msgid "Post Format Template"
-msgstr "Šablona formátu příspěvku"
+msgstr "投稿フォーマットのテンプレート"
 
 #: class.bcn_admin.php:532 class.bcn_network_admin.php:600
 msgid "The template for post format breadcrumbs."
-msgstr "Šablona pro formát příspěvku drobečkové navigace."
+msgstr "投稿フォーマットのパンくず用テンプレートです。"
 
 #: class.bcn_admin.php:533 class.bcn_network_admin.php:601
 msgid "Post Format Template (Unlinked)"
-msgstr "Šablona formátu příspěvku (bez odkazu)"
+msgstr "投稿フォーマットのテンプレート(リンクなし)"
 
 #: class.bcn_admin.php:533 class.bcn_network_admin.php:601
 msgid "The template for post_format breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona pro post_format drobečkovou navigaci, použita pouze, když není drobečková navigace s odkazem."
+msgstr "投稿フォーマットのパンくず用テンプレート。パンくずがリンクになっていないときだけ使われます。"
 
 #: class.bcn_admin.php:563 class.bcn_network_admin.php:631
 msgid "The settings for author and date archives, searches, and 404 pages are located under this tab."
-msgstr "Nastavení pro autora a archiv data, hledání a stránky 404 jsou umístěna zde."
+msgstr "投稿者、日付アーカイブ、404ページの設定は、このタブをクリックしてください。"
 
 #: class.bcn_admin.php:564 class.bcn_network_admin.php:632
 msgid "Author Archives"
-msgstr "Archivy autora"
+msgstr "投稿者アーカイブ"
 
 #: class.bcn_breadcrumb_trail.php:114 class.bcn_breadcrumb_trail.php:119
 msgid "<a title=\"Go to the %title% tag archives.\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
-msgstr "<a title=\"Zobrazit archivy štítku %title%\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
+msgstr "<a title=\"%title%のタグアーカイブへ行く\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
 
 #: class.bcn_breadcrumb_trail.php:124
 msgid "Articles by: <a title=\"Go to the first page of posts by %title%.\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
-msgstr "Články od: <a title=\"Zobrazit první stránku příspěvků od %title%.\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
+msgstr "投稿者: <a title=\"%title%による投稿の最初のページへ行く\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
 
 #: class.bcn_breadcrumb_trail.php:131
 msgid "<a title=\"Go to the %title% category archives.\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
-msgstr "<a title=\"Zobrazit archivy rubriky %title%\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
+msgstr "<a title=\"%title%のカテゴリアーカイブへ行く\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
 
 #: class.bcn_breadcrumb_trail.php:135
 msgid "<a title=\"Go to the %title% archives.\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
-msgstr "<a title=\"Zobrazit archivy %title%\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
+msgstr "<a title=\"%title%アーカイブへ行く\" href=\"%link%\" class=\"%type%\">%htitle%</a>"
 
 #: includes/class.mtekk_adminkit.php:296
 msgid "Your settings are for a newer version."
-msgstr "Vaše nastavení je určeno pro novější verzi."
+msgstr "あなたの設定は新しいバージョンに合っています。"
 
 #: class.bcn_widget.php:96
 msgid "Text to show before the trail:"
-msgstr "Text k zobrazení před řetězcem:"
+msgstr "パンくずの前につけるテキスト:"
 
 #: class.bcn_widget.php:103
 msgid "Schema.org"
@@ -156,337 +156,337 @@ msgstr "Schema.org"
 
 #: class.bcn_admin.php:227 class.bcn_network_admin.php:295
 msgid "Go to the Breadcrumb NavXT translation project."
-msgstr "Otevřít projekt překladu pluginu Breadcrumb NavXT."
+msgstr "Breadcrumb NavXTの翻訳プロジェクトへ行く。"
 
 #: breadcrumb-navxt.php:35 class.bcn_admin.php:25
 #: class.bcn_network_admin.php:25
 msgid "Your PHP version is too old, please upgrade to a newer version. Your version is %1$s, Breadcrumb NavXT requires %2$s"
-msgstr "Vaše verze PHP je příliš zastaralá, proveďte prosím aktualizaci na novější. Používáte verzi %1$s, Breadcrumb NavXT vyžaduje %2$s"
+msgstr "お使いのPHPは古すぎます。もっと新しいバージョンにアップグレードしてください。お使いのバージョンは、%1$s、Breadcrumb NavXTには%2$sが必要です。"
 
 #: class.bcn_widget.php:33
 msgid "Adds a breadcrumb trail to your sidebar"
-msgstr "Přidá řetězec drobečkové navigace do sidebaru"
+msgstr "サイドバーにパンくずリストを追加します"
 
 #: class.bcn_widget.php:92
 msgid "Title:"
-msgstr "Titulek:"
+msgstr "タイトル:"
 
 #: class.bcn_widget.php:100
 msgid "Output trail as:"
-msgstr "Výstup řetězce jako:"
+msgstr "パンくずの表示方法:"
 
 #: class.bcn_widget.php:102
 msgid "List"
-msgstr "Seznam"
+msgstr "リスト"
 
 #: class.bcn_widget.php:104
 msgid "Plain"
-msgstr "Čistý"
+msgstr "プレーンテキスト"
 
 #: class.bcn_widget.php:109
 msgid "Link the breadcrumbs"
-msgstr "Nalinkovat drobečkovou navigaci"
+msgstr "パンくずをリンクにする"
 
 #: class.bcn_widget.php:111
 msgid "Reverse the order of the trail"
-msgstr "Obrátit pořadí řetězce"
+msgstr "リストの順序を逆にする"
 
 #: class.bcn_widget.php:113
 msgid "Hide the trail on the front page"
-msgstr "Skrýt řetězec z domovské stránky"
+msgstr "トップページではリストを表示しない"
 
 #: class.bcn_admin.php:95 class.bcn_network_admin.php:165
 msgid "Insufficient privileges to proceed."
-msgstr "Nedostatečná práva k pokračování"
+msgstr "続けるのに必要な権限がありません。"
 
 #: class.bcn_admin.php:220 class.bcn_network_admin.php:288
 msgid "Tips for the settings are located below select options."
-msgstr "Typy pro nastavení jsou umístění pod výběrem možnosti."
+msgstr "設定のヒントは下にあります。オプションを選択してください。"
 
 #: class.bcn_admin.php:221 class.bcn_network_admin.php:289
 msgid "Resources"
-msgstr "Zdroje"
+msgstr "リソース"
 
 #: class.bcn_admin.php:222 class.bcn_network_admin.php:290
 msgid "%sTutorials and How Tos%s: There are several guides, tutorials, and how tos available on the author's website."
-msgstr "%sTutoriály a návody%: Na webových stránkách je k dispozici několik tutoriálů a návodů."
+msgstr "%sチュートリアルとハウツー%s: 作者のウェブサイトには使い方ガイド、チュートリアル、ハウツーが複数あります。"
 
 #: class.bcn_admin.php:222 class.bcn_network_admin.php:290
 msgid "Go to the Breadcrumb NavXT tag archive."
-msgstr "Otevřít  archiv tagů Breadcrumb NavXT."
+msgstr "Breadcumb NavXTのタグ・アーカイブに行く。"
 
 #: class.bcn_admin.php:223 class.bcn_network_admin.php:291
 msgid "%sOnline Documentation%s: Check out the documentation for more indepth technical information."
-msgstr "%sOnline dokumentace%: Navštivte dokumentaci pro více hlubších technických informací."
+msgstr "%sオンライン・ドキュメント%s: もっと詳しい技術情報のためのドキュメントをチェックしましょう。"
 
 #: class.bcn_admin.php:223 class.bcn_network_admin.php:291
 msgid "Go to the Breadcrumb NavXT online documentation"
-msgstr "Otevřít online dokumentaci Breadcrumb NavXT"
+msgstr "Breadcrumb NavXTのオンライン・ドキュメントを見る。"
 
 #: class.bcn_admin.php:224 class.bcn_network_admin.php:292
 msgid "%sReport a Bug%s: If you think you have found a bug, please include your WordPress version and details on how to reproduce the bug."
-msgstr "%sNahlašte chybu%: Pokud si myslíte, že jste nalezli chybu, přiložte prosím verzi vašeho WordPressu a podrobné informace o výskytu chyby."
+msgstr "%sバグレポート%s: バグを見つけたら、あなたのWordPressのバージョンとバグを再現する方法の詳細を含めてください。"
 
 #: class.bcn_admin.php:224 class.bcn_network_admin.php:292
 msgid "Go to the Breadcrumb NavXT support post for your version."
-msgstr "Otevřít vlákno podpory pro vaši verzi Breadcrumb NavXT"
+msgstr "このバージョン用のBreadcrumb NavXTサポート・フォーラムへ行く。"
 
 #: class.bcn_admin.php:225 class.bcn_network_admin.php:293
 msgid "Giving Back"
-msgstr "Dát zpět"
+msgstr "返す"
 
 #: class.bcn_admin.php:226 class.bcn_network_admin.php:294
 msgid "%sDonate%s: Love Breadcrumb NavXT and want to help development? Consider buying the author a beer."
-msgstr "%Přispějte%: Líbí se vám Breadcrumb NavXT a chtěli byste přispět na jeho vývoj? Zvažte zakoupení piva pro autora."
+msgstr "%s寄付%s: Breadcrumb NavXTが気に入って、開発を援助したいですか? 作者にビールを奢りましょう。"
 
 #: class.bcn_admin.php:226 class.bcn_network_admin.php:294
 msgid "Go to PayPal to give a donation to Breadcrumb NavXT."
-msgstr "Otevřít PayPal pro odeslání příspěvku na Breadcrumb NavXT"
+msgstr "PayPalでBreadcrumb NavXTへの寄付をする。"
 
 #: class.bcn_admin.php:227 class.bcn_network_admin.php:295
 msgid "%sTranslate%s: Is your language not available? Contact John Havlik to get translating."
-msgstr "%Překlad%: Není k dispozici váš jazyk? Kontaktujte Johna Havlik pro přeložení."
+msgstr "%s翻訳%s: あなたの言語がありませんか? John Havlikにコンタクトを取って、翻訳を入手してください。"
 
 #: class.bcn_admin.php:232 class.bcn_admin.php:321 class.bcn_admin.php:322
 #: class.bcn_network_admin.php:300 class.bcn_network_admin.php:389
 #: class.bcn_network_admin.php:390
 msgid "General"
-msgstr "Obecné"
+msgstr "一般"
 
 #: class.bcn_admin.php:235 class.bcn_network_admin.php:303
 msgid "For the settings on this page to take effect, you must either use the included Breadcrumb NavXT widget, or place either of the code sections below into your theme."
-msgstr "Aby bylo nastavení na této stránce platné, musíte buď použít Breadcrumb NavXT widget nebo vložit kód níže do vaší šablony."
+msgstr "このページの設定を有効にするためには、Breadcrumb NavXTウィジェットを有効にするか、お使いのテーマに下のコードを書き加えてください。"
 
 #: class.bcn_admin.php:236 class.bcn_network_admin.php:304
 msgid "Breadcrumb trail with separators"
-msgstr "Řetězec drobečkové navigace s oddělovačem"
+msgstr "パンくずを区切り文字で区切る"
 
 #: class.bcn_admin.php:242 class.bcn_network_admin.php:310
 msgid "Breadcrumb trail in list form"
-msgstr "Řetězec drobečkové navigace jako vysouvací pole formuláře"
+msgstr "パンくずをリスト形式にする"
 
 #: class.bcn_admin.php:251 class.bcn_network_admin.php:319
 msgid "Quick Start"
-msgstr "Rychlý start"
+msgstr "お手軽設定"
 
 #: class.bcn_admin.php:254 class.bcn_network_admin.php:322
 msgid "Using the code from the Quick Start section above, the following CSS can be used as base for styling your breadcrumb trail."
-msgstr "Použijte kód ze sekce Rychlý start níže, následující CSS může být použito jako základ pro stylování vaší drobečkové navigace."
+msgstr "上の「お手軽設定」のコードを使う場合、パンくずの基本スタイルとして次のCSSを使うことができます。"
 
 #: class.bcn_admin.php:266 class.bcn_network_admin.php:334
 msgid "Styling"
-msgstr "Stylování"
+msgstr "スタイル"
 
 #: class.bcn_admin.php:272 class.bcn_network_admin.php:340
 msgid "Import/Export/Reset"
-msgstr "Import/Export/Reset"
+msgstr "インポート/エクスポート/リセット"
 
 #: class.bcn_admin.php:296 class.bcn_network_admin.php:364
 #: includes/class.mtekk_adminkit.php:792
 msgid "Import"
-msgstr "Import"
+msgstr "インポート"
 
 #: class.bcn_admin.php:297 class.bcn_network_admin.php:365
 #: includes/class.mtekk_adminkit.php:793
 msgid "Export"
-msgstr "Export"
+msgstr "エクスポート"
 
 #: class.bcn_admin.php:298 class.bcn_network_admin.php:366
 #: includes/class.mtekk_adminkit.php:794
 msgid "Reset"
-msgstr "Reset"
+msgstr "リセット"
 
 #: class.bcn_admin.php:309
 msgid "Breadcrumb NavXT Settings"
-msgstr "Nastavení BreadCrumb NavXT"
+msgstr "Breadcrumb NavXT設定"
 
 #: class.bcn_admin.php:325 class.bcn_network_admin.php:393
 msgid "Breadcrumb Separator"
-msgstr "Oddělovač prvků"
+msgstr "パンくず区切り文字"
 
 #: class.bcn_admin.php:325 class.bcn_network_admin.php:393
 msgid "Placed in between each breadcrumb."
-msgstr "Je vložen mezi každý prvek"
+msgstr "上の文字がパンくずの間に入ります。"
 
 #: class.bcn_admin.php:359 class.bcn_admin.php:362
 #: class.bcn_network_admin.php:427 class.bcn_network_admin.php:430
 msgid "Home Breadcrumb"
-msgstr "Úvodní prvek"
+msgstr "ホームを示すパンくず"
 
 #: class.bcn_admin.php:362 class.bcn_network_admin.php:430
 msgid "Place the home breadcrumb in the trail."
-msgstr "Vložit do řetězce úvodní prvek"
+msgstr "パンくずにホームページを含める。"
 
 #: class.bcn_admin.php:363 class.bcn_network_admin.php:431
 msgid "Home Template"
-msgstr "Šablona úvodního prvku"
+msgstr "ホームページ用テンプレート"
 
 #: class.bcn_admin.php:363 class.bcn_network_admin.php:431
 msgid "The template for the home breadcrumb."
-msgstr "Šablona pro úvodní prvek"
+msgstr "ホームを示すパンくず用テンプレートです。"
 
 #: class.bcn_admin.php:364 class.bcn_network_admin.php:432
 msgid "Home Template (Unlinked)"
-msgstr "Úvodní šablona (bez odkazu)"
+msgstr "ホームページ用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:364 class.bcn_network_admin.php:432
 msgid "The template for the home breadcrumb, used when the breadcrumb is not linked."
-msgstr "Šablona pro úvodní prvek zobrazena v případě, že není použit odkaz."
+msgstr "リンクなしのホームページ用パンくずテンプレートです。"
 
 #: class.bcn_admin.php:368 class.bcn_admin.php:371
 #: class.bcn_network_admin.php:436 class.bcn_network_admin.php:439
 msgid "Blog Breadcrumb"
-msgstr "Prvek blogu"
+msgstr "ブログ用パンくず"
 
 #: class.bcn_admin.php:371 class.bcn_network_admin.php:439
 msgid "Place the blog breadcrumb in the trail."
-msgstr "Vložit prvek blogu do řetězce."
+msgstr "ブログのパンくずをパンくずリストに含めます。"
 
 #: class.bcn_admin.php:372 class.bcn_network_admin.php:440
 msgid "Blog Template"
-msgstr "Šablona blogu"
+msgstr "ブログ用テンプレート"
 
 #: class.bcn_admin.php:372 class.bcn_network_admin.php:440
 msgid "The template for the blog breadcrumb, used only in static front page environments."
-msgstr "Šablona prvku blogu, je použita pouze v případě prostředí se statickou domovskou stránkou."
+msgstr "ブログのパンくず用テンプレート。ブログを固定ページにしたときだけ使われます。"
 
 #: class.bcn_admin.php:373 class.bcn_network_admin.php:441
 msgid "Blog Template (Unlinked)"
-msgstr "Šablona blogu (bez odkazu)"
+msgstr "ブログ用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:373 class.bcn_network_admin.php:441
 msgid "The template for the blog breadcrumb, used only in static front page environments and when the breadcrumb is not linked."
-msgstr "Šablona pro prvek blogu, použita pouze v případě prostředí se statickou domovskou stránkou a bez odkazu."
+msgstr "ブログのパンくずリスト用のテンプレートです。固定ページをブログに使い、リンクなしにするテンプレートです。"
 
 #: class.bcn_admin.php:380 class.bcn_network_admin.php:448
 msgid "Main Site Breadcrumb"
-msgstr "Prvek hlavní stránky"
+msgstr "メインサイトのパンくず"
 
 #: class.bcn_admin.php:380 class.bcn_network_admin.php:448
 msgid "Place the main site home breadcrumb in the trail in an multisite setup."
-msgstr "Vloží prvek hlavní stránky do řetězce v multisite systému."
+msgstr "マルチサイトで運用するとき、パンくずにメインサイトのホームを含めます。"
 
 #: class.bcn_admin.php:381 class.bcn_network_admin.php:449
 msgid "Main Site Home Template"
-msgstr "Šablona úvodu hlavní stránky:"
+msgstr "メインサイトのホーム用テンプレート"
 
 #: class.bcn_admin.php:381 class.bcn_network_admin.php:449
 msgid "The template for the main site home breadcrumb, used only in multisite environments."
-msgstr "Šablona pro úvodní prvek hlavní stránky, bude použita pouze v multisite systému."
+msgstr "メインサイトのホームに使うパンくず用のテンプレート。マルチサイトの環境で動作します。"
 
 #: class.bcn_admin.php:382 class.bcn_network_admin.php:450
 msgid "Main Site Home Template (Unlinked)"
-msgstr "Šablona úvodu hlavní stránky (bez odkazu)"
+msgstr "メインサイトのホーム用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:382 class.bcn_network_admin.php:450
 msgid "The template for the main site home breadcrumb, used only in multisite environments and when the breadcrumb is not linked."
-msgstr "Šablona pro úvodní prvek hlavní stránky, bude použita pouze v multisite systému a bez odkazu."
+msgstr "メインサイトのホーム用テンプレート。マルチサイト環境でリンクなしの場合。"
 
 #: class.bcn_admin.php:350 class.bcn_network_admin.php:418
 msgid "Current Item"
-msgstr "Současná položka"
+msgstr "現在のページを示す項目"
 
 #: class.bcn_admin.php:353 class.bcn_network_admin.php:421
 msgid "Link Current Item"
-msgstr "Současná položka jako odkaz"
+msgstr "現在のページを示す項目にリンクを張る"
 
 #: class.bcn_admin.php:353 class.bcn_network_admin.php:421
 msgid "Yes"
-msgstr "Ano"
+msgstr "はい"
 
 #: class.bcn_admin.php:354 class.bcn_network_admin.php:422
 msgid "Paged Breadcrumb"
-msgstr "Stránkovaný prvek"
+msgstr "ページ分割パンくず"
 
 #: class.bcn_admin.php:354 class.bcn_network_admin.php:422
 msgid "Include the paged breadcrumb in the breadcrumb trail."
-msgstr "Zahrnout stránkovaný prvek v řetězci drobečkové navigace."
+msgstr "分割ページパンくずを含める。"
 
 #: class.bcn_admin.php:354 class.bcn_network_admin.php:422
 msgid "Indicates that the user is on a page other than the first on paginated posts/pages."
-msgstr "Indikuje, že je uživatel na jiné, než první stránce stránkovaného výpisu příspěvků / stránek."
+msgstr "ページ分割された投稿やページで、2ページ目以降をパンくずで示します。"
 
 #: class.bcn_admin.php:355 class.bcn_network_admin.php:423
 msgid "Paged Template"
-msgstr "Stránkovaná šablona"
+msgstr "分割ページのテンプレート"
 
 #: class.bcn_admin.php:355 class.bcn_network_admin.php:423
 msgid "The template for paged breadcrumbs."
-msgstr "Šablona pro stránkovaný prvek drobečkové navigace."
+msgstr "分割ページパンくずのためのテンプレートです。"
 
 #: class.bcn_admin.php:393 class.bcn_network_admin.php:461
 msgid "Post Template"
-msgstr "Šablona příspěvku"
+msgstr "投稿テンプレート"
 
 #: class.bcn_admin.php:393 class.bcn_network_admin.php:461
 msgid "The template for post breadcrumbs."
-msgstr "Šablona příspěvku v drobečkové navigaci."
+msgstr "投稿パンくずのテンプレートです。"
 
 #: class.bcn_admin.php:394 class.bcn_network_admin.php:462
 msgid "Post Template (Unlinked)"
-msgstr "Šablona příspěvku (bez odkazu)"
+msgstr "投稿のテンプレート(リンクなし)"
 
 #: class.bcn_admin.php:394 class.bcn_network_admin.php:462
 msgid "The template for post breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona příspěvku v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "投稿パンくずのテンプレートです。リンクなしの場合だけ使われます。"
 
 #: class.bcn_admin.php:395 class.bcn_network_admin.php:463
 msgid "Show the taxonomy leading to a post in the breadcrumb trail."
-msgstr "Zobrazit taxonomii vedoucí k příspěvku v řetězci drobečkové navigace."
+msgstr "パンくずの投稿にタクソノミーを付け加えます。"
 
 #: class.bcn_admin.php:403 class.bcn_admin.php:515
 #: class.bcn_network_admin.php:471 class.bcn_network_admin.php:583
 msgid "Categories"
-msgstr "Rubriky"
+msgstr "カテゴリー"
 
 #: class.bcn_admin.php:404 class.bcn_network_admin.php:472
 msgid "Dates"
-msgstr "Data"
+msgstr "日付"
 
 #: class.bcn_admin.php:405 class.bcn_admin.php:522
 #: class.bcn_network_admin.php:473 class.bcn_network_admin.php:590
 msgid "Tags"
-msgstr "Tagy"
+msgstr "タグ"
 
 #: class.bcn_admin.php:427 class.bcn_network_admin.php:495
 msgid "Pages"
-msgstr "Stránky"
+msgstr "ページ"
 
 #: class.bcn_admin.php:430 class.bcn_network_admin.php:498
 msgid "Page Template"
-msgstr "Šablona stránky"
+msgstr "ページ用テンプレート"
 
 #: class.bcn_admin.php:430 class.bcn_network_admin.php:498
 msgid "The template for page breadcrumbs."
-msgstr "Šablona stránky v drobečkové navigaci."
+msgstr "ページパンくず用のテンプレートです。"
 
 #: class.bcn_admin.php:431 class.bcn_network_admin.php:499
 msgid "Page Template (Unlinked)"
-msgstr "Šablona stránky (bez odkazu)"
+msgstr "ページ用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:431 class.bcn_network_admin.php:499
 msgid "The template for page breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona stránky v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "ページパンくず用のテンプレートです。パンくずがリンクになっていない場合だけ使われます。"
 
 #: class.bcn_admin.php:432 class.bcn_network_admin.php:500
 msgid "Attachment Template"
-msgstr "Šablona přílohy"
+msgstr "添付ファイル用テンプレート"
 
 #: class.bcn_admin.php:432 class.bcn_network_admin.php:500
 msgid "The template for attachment breadcrumbs."
-msgstr "Šablona přílohy v drobečkové navigaci."
+msgstr "添付ファイルパンくず用のテンプレート"
 
 #: class.bcn_admin.php:433 class.bcn_network_admin.php:501
 msgid "Attachment Template (Unlinked)"
-msgstr "Šablona přílohy (bez odkazu)"
+msgstr "添付ファイル用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:433 class.bcn_network_admin.php:501
 msgid "The template for attachment breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona přílohy v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "添付ファイルパンくず用のテンプレートです。パンくずがリンクになっていない場合だけ使われます。"
 
 #: breadcrumb-navxt.php:247
 msgid "<a title=\"Go to %title%.\" href=\"%link%\">%htitle%</a>"
-msgstr "<a title=\"Otevřít %title%\" href=\"%link%\">%htitle%</a>"
+msgstr "<a title=\"%title%へ行く\" href=\"%link%\">%htitle%</a>"
 
 #: breadcrumb-navxt.php:248 class.bcn_breadcrumb.php:63
 msgid "%htitle%"
@@ -495,273 +495,273 @@ msgstr "%htitle%"
 #: class.bcn_admin.php:453 class.bcn_admin.php:553
 #: class.bcn_network_admin.php:521 class.bcn_network_admin.php:621
 msgid "%s Template"
-msgstr "Šablona %"
+msgstr "%s用テンプレート"
 
 #: class.bcn_admin.php:453 class.bcn_admin.php:553
 #: class.bcn_network_admin.php:521 class.bcn_network_admin.php:621
 msgid "The template for %s breadcrumbs."
-msgstr "Šablona pro %s drobečkovou navigaci."
+msgstr "%sパンくず用のテンプレートです。"
 
 #: class.bcn_admin.php:454 class.bcn_admin.php:554
 #: class.bcn_network_admin.php:522 class.bcn_network_admin.php:622
 msgid "%s Template (Unlinked)"
-msgstr "Šablona %s (bez odkazu)"
+msgstr "%s用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:454 class.bcn_admin.php:554
 #: class.bcn_network_admin.php:522 class.bcn_network_admin.php:622
 msgid "The template for %s breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona pro %s drobečkovou navigaci, bude použita pouze bez odkazu."
+msgstr "%sパンくず用テンプレートです。パンくずがリンクになっていない場合だけ使われます。"
 
 #: class.bcn_admin.php:459 class.bcn_network_admin.php:527
 msgid "%s Root Page"
-msgstr "Kořenová stránka %s"
+msgstr "%sルートページ"
 
 #: class.bcn_admin.php:462 class.bcn_network_admin.php:530
 msgid "&mdash; Select &mdash;"
-msgstr "&mdash; Vybrat &mdash;"
+msgstr "&mdash; 選択 &mdash;"
 
 #: class.bcn_admin.php:466 class.bcn_network_admin.php:534
 msgid "%s Archive Display"
-msgstr "Zobrazení archivu %s"
+msgstr "%sアーカイブ表示"
 
 #: class.bcn_admin.php:466 class.bcn_network_admin.php:534
 msgid "Show the breadcrumb for the %s post type archives in the breadcrumb trail."
-msgstr "Zobrazit prvky pro archiv typů příspěvku %s v řetězci drobečkové navigace."
+msgstr "パンくずリストに、%sポストタイプのアーカイブのパンくずを表示しましす。"
 
 #: class.bcn_admin.php:467 class.bcn_network_admin.php:535
 msgid "Show the taxonomy leading to a %s in the breadcrumb trail."
-msgstr "Zobrazit taxonomii vedoucí k %s v řetězci drobečkové navigace."
+msgstr "パンくずリストに、%sへのタクソノミーを表示します。"
 
 #: class.bcn_admin.php:518 class.bcn_network_admin.php:586
 msgid "Category Template"
-msgstr "Šablona rubriky"
+msgstr "カテゴリー用テンプレート"
 
 #: class.bcn_admin.php:518 class.bcn_network_admin.php:586
 msgid "The template for category breadcrumbs."
-msgstr "Šablona rubriky v drobečkové navigaci."
+msgstr "カテゴリーパンくず用のテンプレートです。"
 
 #: class.bcn_admin.php:519 class.bcn_network_admin.php:587
 msgid "Category Template (Unlinked)"
-msgstr "Šablona rubriky (bez odkazu)"
+msgstr "カテゴリー用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:519 class.bcn_network_admin.php:587
 msgid "The template for category breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona rubriky v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "カテゴリーのパンくず用テンプレート。パンくずがリンクになっていないときにだけ使われます。"
 
 #: class.bcn_admin.php:525 class.bcn_network_admin.php:593
 msgid "Tag Template"
-msgstr "Šablona tagu"
+msgstr "タグ用テンプレート"
 
 #: class.bcn_admin.php:525 class.bcn_network_admin.php:593
 msgid "The template for tag breadcrumbs."
-msgstr "Šablona pro tag v drobečkové navigaci."
+msgstr "タグのパンくず用テンプレートです。"
 
 #: class.bcn_admin.php:526 class.bcn_network_admin.php:594
 msgid "Tag Template (Unlinked)"
-msgstr "Šablona tagu (bez odkazu)"
+msgstr "タグ用テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:526 class.bcn_network_admin.php:594
 msgid "The template for tag breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona tagu v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "タグのパンくず用テンプレート。パンくずがリンクになっていないときだけ使われます。"
 
 #: class.bcn_admin.php:563 class.bcn_admin.php:572
 #: class.bcn_network_admin.php:631 class.bcn_network_admin.php:640
 msgid "Miscellaneous"
-msgstr "Různé"
+msgstr "その他"
 
 #: class.bcn_admin.php:567 class.bcn_network_admin.php:635
 msgid "Author Template"
-msgstr "Šablona autora"
+msgstr "投稿者テンプレート"
 
 #: class.bcn_admin.php:567 class.bcn_network_admin.php:635
 msgid "The template for author breadcrumbs."
-msgstr "Šablona autora v drobečkové navigaci."
+msgstr "投稿者パンくずのテンプレートです。"
 
 #: class.bcn_admin.php:568 class.bcn_network_admin.php:636
 msgid "Author Template (Unlinked)"
-msgstr "Šablona autora (bez odkazu)"
+msgstr "投稿者テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:568 class.bcn_network_admin.php:636
 msgid "The template for author breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona autora v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "投稿者パンくずのテンプレートです。パンくずがリンクになっていないときだけ使われます。"
 
 #: class.bcn_admin.php:569 class.bcn_network_admin.php:637
 msgid "Author Display Format"
-msgstr "Formát zobrazení autora"
+msgstr "投稿者表示フォーマット"
 
 #: class.bcn_admin.php:569 class.bcn_network_admin.php:637
 msgid "display_name uses the name specified in \"Display name publicly as\" under the user profile the others correspond to options in the user profile."
-msgstr "display_name používá jméno specifikované v \"Zobrazovat jméno veřejně jako\" v uživatelském profilu, další korespondují s hodnotami v uživatelském profilu."
+msgstr "display_nameは、ユーザプロフィールの\"ブログ上の表示名\"で指定されたものを使います。他はユーザプロフィールの設定に従います。"
 
 #: class.bcn_admin.php:575 class.bcn_network_admin.php:643
 msgid "Date Template"
-msgstr "Šablona data"
+msgstr "日付テンプレート"
 
 #: class.bcn_admin.php:575 class.bcn_network_admin.php:643
 msgid "The template for date breadcrumbs."
-msgstr "Šablona pro datum v drobečkové navigaci."
+msgstr "日付パンくず用のテンプレートです。"
 
 #: class.bcn_admin.php:576 class.bcn_network_admin.php:644
 msgid "Date Template (Unlinked)"
-msgstr "Formát data (bez odkazu)"
+msgstr "日付テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:576 class.bcn_network_admin.php:644
 msgid "The template for date breadcrumbs, used only when the breadcrumb is not linked."
-msgstr "Šablona pro formát data v drobečkové navigaci, bude použita pouze bez odkazu."
+msgstr "日付パンくずのテンプレートです。パンくずがリンクになっていないときだけ使われます。"
 
 #: class.bcn_admin.php:577 class.bcn_network_admin.php:645
 msgid "Search Template"
-msgstr "Šablona hledání"
+msgstr "検索テンプレート"
 
 #: class.bcn_admin.php:577 class.bcn_network_admin.php:645
 msgid "The anchor template for search breadcrumbs, used only when the search results span several pages."
-msgstr "Šablona pro výsledky vyhledávání, bude použita pouze v případě, že výsledky vyhledávání přesahují jednu stránku."
+msgstr "検索パンくずのアンカー用テンプレートです。検索結果が複数ページに渡るときにだけ使われます。"
 
 #: class.bcn_admin.php:578 class.bcn_network_admin.php:646
 msgid "Search Template (Unlinked)"
-msgstr "Šablona hledání (bez odkazu)"
+msgstr "検索テンプレート(リンクなし)"
 
 #: class.bcn_admin.php:578 class.bcn_network_admin.php:646
 msgid "The anchor template for search breadcrumbs, used only when the search results span several pages and the breadcrumb is not linked."
-msgstr "Šablona pro výsledky vyhledávání, bude použita pouze v případě, že výsledky vyhledávání přesahují jednu stránku a není použit odkaz."
+msgstr "検索パンくずのアンカー用テンプレート。検索結果が複数ページに渡り、リンクになっていないときだけ使われます。"
 
 #: class.bcn_admin.php:579 class.bcn_network_admin.php:647
 msgid "404 Title"
-msgstr "Titulek 404"
+msgstr "404タイトル"
 
 #: class.bcn_admin.php:580 class.bcn_network_admin.php:648
 msgid "404 Template"
-msgstr "Šablona 404"
+msgstr "404テンプレート"
 
 #: class.bcn_admin.php:580 class.bcn_network_admin.php:648
 msgid "The template for 404 breadcrumbs."
-msgstr "Šablona pro 404 v drobečkové navigaci."
+msgstr "404パンくずのテンプレートです。"
 
 #: class.bcn_admin.php:587 class.bcn_network_admin.php:655
 msgid "Save Changes"
-msgstr "Uložit změny"
+msgstr "変更を保存"
 
 #: includes/class.mtekk_adminkit.php:217
 msgid "Settings"
-msgstr "Nastavení"
+msgstr "設定"
 
 #: includes/class.mtekk_adminkit.php:287
 msgid "Your settings are out of date."
-msgstr "Naše nastavení je zastaralé."
+msgstr "あなたの設定はもうサポートされていません。"
 
 #: includes/class.mtekk_adminkit.php:287 includes/class.mtekk_adminkit.php:296
 msgid "Migrate the settings now."
-msgstr "Migrovat nastavení nyní."
+msgstr "すぐに設定を移行します。"
 
 #: includes/class.mtekk_adminkit.php:287 includes/class.mtekk_adminkit.php:296
 msgid "Migrate now."
-msgstr "Migrovat nyní."
+msgstr "すぐに移行する。"
 
 #: includes/class.mtekk_adminkit.php:304
 msgid "Your plugin install is incomplete."
-msgstr "Instalace pluginu není kompletní."
+msgstr "プラグインのインストールが終わっていません。"
 
 #: includes/class.mtekk_adminkit.php:304
 msgid "Load default settings now."
-msgstr "Nahraje výchozí nastavení."
+msgstr "すぐにデフォルトの設定を読み込みます。"
 
 #: includes/class.mtekk_adminkit.php:304
 msgid "Complete now."
-msgstr "Hotovo."
+msgstr "終了しました。"
 
 #: includes/class.mtekk_adminkit.php:312
 msgid "Your plugin settings are invalid."
-msgstr "Nastavení pluginu není správné."
+msgstr "プラグインの設定が正しくありません。"
 
 #: includes/class.mtekk_adminkit.php:312
 msgid "Attempt to fix settings now."
-msgstr "Pokus o opravu nastavení."
+msgstr "すぐに設定を直します。"
 
 #: includes/class.mtekk_adminkit.php:312
 msgid "Fix now."
-msgstr "Opravit."
+msgstr "すぐに直します。"
 
 #: includes/class.mtekk_adminkit.php:490
 msgid "Settings successfully saved."
-msgstr "Nastavení úspěšně uloženo."
+msgstr "設定を保存しました。"
 
 #: includes/class.mtekk_adminkit.php:490 includes/class.mtekk_adminkit.php:495
 msgid "Undo the options save."
-msgstr "Vrátit změny nastavení."
+msgstr "設定の保存を取り消します。"
 
 #: includes/class.mtekk_adminkit.php:490 includes/class.mtekk_adminkit.php:495
 #: includes/class.mtekk_adminkit.php:600 includes/class.mtekk_adminkit.php:624
 #: includes/class.mtekk_adminkit.php:641
 msgid "Undo"
-msgstr "Vrátit"
+msgstr "取り消し"
 
 #: includes/class.mtekk_adminkit.php:495
 msgid "Some settings were not saved."
-msgstr "Některá nastavení nebyla uložena."
+msgstr "保存されていない設定があります。"
 
 #: includes/class.mtekk_adminkit.php:496
 msgid "The following settings were not saved:"
-msgstr "Následující nastavení nebyla uložena:"
+msgstr "次の設定は保存されませんでした。"
 
 #: includes/class.mtekk_adminkit.php:501
 msgid "Please include this message in your %sbug report%s."
-msgstr "Přidejte prosím tuto zprávu do vašeho %sbug report%s."
+msgstr "%sバグ報告%sにこのメッセージを含めてください。"
 
 #: includes/class.mtekk_adminkit.php:501
 msgid "Go to the %s support post for your version."
-msgstr "Otevřete si příspěvek podpory %s pro vaši verzi."
+msgstr "このバージョンの%sサポートに投稿をしに行きます。"
 
 #: includes/class.mtekk_adminkit.php:600
 msgid "Settings successfully imported from the uploaded file."
-msgstr "Nastavení úspěšně importováno z nahraného souboru."
+msgstr "アップロードしたファイルから設定をインポートしました。"
 
 #: includes/class.mtekk_adminkit.php:600
 msgid "Undo the options import."
-msgstr "Vrátit zpět importování nastavení."
+msgstr "設定のインポートを中止します。"
 
 #: includes/class.mtekk_adminkit.php:605
 msgid "Importing settings from file failed."
-msgstr "Importování nastavení ze souboru selhalo."
+msgstr "ファイルからの設定インポートが失敗しました。"
 
 #: includes/class.mtekk_adminkit.php:624
 msgid "Settings successfully reset to the default values."
-msgstr "Nastavení úspěšně navráceno k výchozím hodnotám."
+msgstr "設定をデフォルトに戻しました。"
 
 #: includes/class.mtekk_adminkit.php:624
 msgid "Undo the options reset."
-msgstr "Vrátit vrácení nastavení."
+msgstr "設定のリセットを取り消します。"
 
 #: includes/class.mtekk_adminkit.php:641
 msgid "Settings successfully undid the last operation."
-msgstr "Nastavení úspěšně vrátilo poslední operaci."
+msgstr "直前の操作を取り消しました。"
 
 #: includes/class.mtekk_adminkit.php:641
 msgid "Undo the last undo operation."
-msgstr "Vrátit poslední operací vrácení."
+msgstr "直前の取り消しをキャンセルします。"
 
 #: includes/class.mtekk_adminkit.php:676
 msgid "Settings successfully migrated."
-msgstr "Nastavení úspěšně migrováno."
+msgstr "設定を移行しました。"
 
 #: includes/class.mtekk_adminkit.php:683
 msgid "Default settings successfully installed."
-msgstr "Výchozí nastavení úspěšně nainstalováno."
+msgstr "デフォルトの設定をインストールしました。"
 
 #: includes/class.mtekk_adminkit.php:784
 msgid "Import settings from a XML file, export the current settings to a XML file, or reset to the default settings."
-msgstr "Importoval nastavení z XML souboru, exportovat současné nastavení do XML souboru nebo vrátit výchozí nastavení."
+msgstr "XMLファイルから設定をインポートしたり、現在の設定をXMLファイルにエクスポートしたり、デフォルトの設定に戻したりします。"
 
 #: includes/class.mtekk_adminkit.php:787
 msgid "Settings File"
-msgstr "Soubor nastavení"
+msgstr "設定ファイル"
 
 #: includes/class.mtekk_adminkit.php:790
 msgid "Select a XML settings file to upload and import settings from."
-msgstr "Vyberte XML soubor nastavení pro nahrání a importování nastavení."
+msgstr "アップロードおよびインポートするXML設定ファイルを選択してください。"
 
 #: class.bcn_breadcrumb_trail.php:82
 msgid "Page %htitle%"
-msgstr "Stránka %htitle%"
+msgstr "ページ%htitle%"
 
 #: class.bcn_breadcrumb_trail.php:106
 msgid "404"
@@ -769,8 +769,8 @@ msgstr "404"
 
 #: class.bcn_breadcrumb_trail.php:111
 msgid "Search results for &#39;%htitle%&#39;"
-msgstr "Výsledky hledání pro &#39;%htitle%&#39;"
+msgstr "&#39;%htitle%&#39;の検索結果"
 
 #: class.bcn_breadcrumb_trail.php:126
 msgid "Articles by: %htitle%"
-msgstr "Články od: %htitle%"
+msgstr "%htitle%の記事"
