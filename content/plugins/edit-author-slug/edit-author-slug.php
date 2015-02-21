@@ -15,8 +15,8 @@
  * Plugin Name: Edit Author Slug
  * Plugin URI: http://brandonallen.org/wordpress/plugins/edit-author-slug/
  * Description: Allows an Admin (or capable user) to edit the author slug of a user, and change the Author Base. <em>i.e. - (WordPress default structure) http://example.com/author/username/ (Plugin allows) http://example.com/ninja/master-ninja/</em>
- * Version: 1.0.2
- * Tested With: 3.6.1, 3.7.1, 3.8.1, 3.9.2, 4.0
+ * Version: 1.0.3
+ * Tested With: 3.6.1, 3.7.1, 3.8.1, 3.9.2, 4.0.1, 4.1
  * Author: Brandon Allen
  * Author URI: http://brandonallen.org/
  * License: GPL2+
@@ -187,7 +187,7 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 
 			/** Versions ****************************************************************/
 
-			$this->version            = '1.0.2';
+			$this->version            = '1.0.3';
 			$this->db_version         = 133;
 			$this->current_db_version = 0;
 
@@ -342,7 +342,7 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 		public function set_role_slugs() {
 
 			// Merge system roles with any customizations we may have
-			$this->role_slugs = array_replace_recursive( get_option( '_ba_eas_role_slugs', array() ), ba_eas_get_default_role_slugs() );
+			$this->role_slugs = array_replace_recursive( ba_eas_get_default_role_slugs(), get_option( '_ba_eas_role_slugs', array() ) );
 		}
 
 		/** Custom Rewrite Rules *****************************************************/
@@ -364,13 +364,13 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 			}
 
 			// Get the role slugs to add the rewrite tag
-			$role_slugs = wp_list_pluck( $this->role_slugs, 'slug' );
+			$role_slugs = array_filter( array_values( wp_list_pluck( $this->role_slugs, 'slug' ) ) );
 
 			// Add the author base as a fallback
 			$role_slugs[] = ba_eas()->author_base;
 
 			// Add the role-based rewrite tag, and the expected role slugs
-			add_rewrite_tag( '%ba_eas_author_role%', '(' . implode( '|', array_values( $role_slugs ) ) . ')' );
+			add_rewrite_tag( '%ba_eas_author_role%', '(' . implode( '|', array_unique( $role_slugs ) ) . ')' );
 		}
 	}
 
