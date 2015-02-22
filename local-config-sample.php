@@ -23,3 +23,6 @@ define('AUTH_SALT',        '=<:9,f2E@,@]_+`eJ:l9kHAs|4|0rfd-Hj WYY)boLcPE|>3-E$c
 define('SECURE_AUTH_SALT', '!9Y1WHILYI`hArw~P/|h#  vK4Iix[V;~I!u`X0Zct|5kj]UV>E{{u-0=p);t,gl');
 define('LOGGED_IN_SALT',   '|{u+Co1S(}Q@)j*K`|eCTroC[E0>~aIK=I>M-7>Mj8+;vK/PCRu s==][E|yJ !B');
 define('NONCE_SALT',       '16TsnTUgDQs0h^X7r-30%~4I|hmb*U.z[=Mjya:u_QnRqfvrG.vqCR@H41as@CEj');
+
+define('WP_HOME','http://dev.easierenglish.bg');
+define('WP_SITEURL','http://dev.easierenglish.bg/WordPress');
