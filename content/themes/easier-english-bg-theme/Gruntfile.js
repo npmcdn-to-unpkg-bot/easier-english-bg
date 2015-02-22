@@ -117,15 +117,11 @@ module.exports = function(grunt) {
         },
         watch: {
             styles: {
-                files: ['styles/**/*.scss'],
-                tasks: ['sass', 'autoprefixer', 'notify:styles']
-            },
-            html: {
-                files: ['*.html'],
-                tasks: ['copy', 'notify:html']
+                files: ['css/**/*.css'],
+                tasks: ['cssmin', 'notify:styles']
             },
             images: {
-                files: ['img/**/*.{png,jpg,gif,svg}'],
+                files: ['img-uncompressed/**/*.{png,jpg,gif,svg}'],
                 tasks: ['newer:imagemin', 'notify:images']
             },
             scripts: {
@@ -141,7 +137,7 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'css/style.min.css': 'css/style.css'
+                    'css/style.min.css': ['css/normalize.css', 'css/style.css']
                 }
             }
         },

@@ -13,7 +13,6 @@
 			<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
 			<?php the_post_thumbnail(); ?>
 			<?php endif; ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
 
 			<div class="inside_articleBox article_info_wrapper group">
 				<?php
@@ -50,18 +49,19 @@
 					}
 					$author_name = get_the_author_meta( $field = 'first_name' ) . " " . get_the_author_meta( $field = 'last_name' );
 				?>
-				<?php if( isset($author_linkedin) ) echo '<a href='. $author_linkedin . ' target="_blank">'; ?>
-				<img src="<?= $image_url ?>" class="article_author" height="80" width="80" alt="<?= $author_name; ?>" />
+				<?php if( isset($author_linkedin) ) echo '<a href='. $author_linkedin . ' class="article-author" target="_blank">'; ?>
+				<img src="<?= $image_url ?>" height="80" width="80" alt="<?= $author_name; ?>" />
 				<?php if( isset($author_linkedin) ) echo '</a>'; ?>
-				<span class="reading_time">
-				За прочитане си отдели около: <span class="info_value"><?php echo get_post_meta( $post->ID, 'completionTime', true ); ?> минути</span>
-				</span>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<div class="reading-time">
+				... за прочитане си отдели около: <span class="info_value"><?php echo get_post_meta( $post->ID, 'completionTime', true ); ?> минути</span>
+				</div>
 
 				<?php
 					$enableExam =  get_post_meta( $post->ID, 'enableExam', true );
 					if ( $enableExam == "true" ) {
 				?>
-					<button id="start_exam" class="slim_button startExam right">Стартирай упражнение</button>
+					<button id="start_exam" class="slim_button startExam">Стартирай упражнение</button>
 				<?php
 					}
 				?>
