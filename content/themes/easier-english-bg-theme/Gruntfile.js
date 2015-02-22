@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 map: true
             },
             no_dest: {
-                src: 'style.css'
+                src: 'css/style.css'
             }
         },
         imagemin: {
@@ -133,10 +133,22 @@ module.exports = function(grunt) {
                 tasks: ['uglify:development', 'notify:scripts']
             }
         },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1,
+                rebase: false
+            },
+            target: {
+                files: {
+                    'css/style.min.css': 'css/style.css'
+                }
+            }
+        },
         concurrent: {
-            developmentTarget1: ['newer:imagemin', 'uglify:development'],
-            productionTarget1: ['newer:imagemin', 'uglify:production'],
-            target2: ['autoprefixer', 'notify:done']
+            developmentTarget1: ['newer:imagemin', 'uglify:development', 'autoprefixer'],
+            productionTarget1: ['newer:imagemin', 'uglify:production', 'autoprefixer'],
+            target2: ['cssmin', 'notify:done']
         }
     });
 
@@ -148,6 +160,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('default', ['concurrent:developmentTarget1', 'concurrent:target2', 'watch']);
     grunt.registerTask('clean', ['shell:clean']);
