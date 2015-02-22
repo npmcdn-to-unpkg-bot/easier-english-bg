@@ -21,7 +21,7 @@
 		<div class="footer-contacts-holder group">
 			<div class="left">
 				<div class="person-left-holder group">
-					<img src="http://easierenglish.bg/wp-content/themes/superTheme/img/Kaloyan_Kosev.jpg" width="80" height="80" class="right" alt="Калоян Косев" />
+					<img src="<?= get_template_directory_uri(); ?>/img/Kaloyan_Kosev_160.jpg" width="80" height="80" class="right" alt="Калоян Косев" />
 					<div class="right">
 						Калоян Косев,<br />
 						<a href="mailto:stoyan.panayotov@easierenglish.bg">kaloyan.kosev@easierenglish.bg</a><br />
@@ -31,7 +31,7 @@
 			</div>
 			<div class="right">
 				<div class="person-right-holder group">
-					<img src="http://easierenglish.bg/wp-content/themes/superTheme/img/Stoyan_Panayotov.jpg" width="80" height="80" class="left" alt="Стоян Панайотов" />
+					<img src="<?= get_template_directory_uri(); ?>/img/Stoyan_Panayotov_160.jpg" width="80" height="80" class="left" alt="Стоян Панайотов" />
 					<div class="left">
 						Стоян Панайотов,<br />
 						<a href="mailto:stoyan.panayotov@easierenglish.bg">stoyan.panayotov@easierenglish.bg</a><br />
