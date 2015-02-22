@@ -51,14 +51,15 @@
 
 </footer>
 
-<?php wp_footer(); ?>
-
 <script>
 	var templateUrl = '<?= get_bloginfo("template_url"); ?>';
 </script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="<?= plugins_url(); ?>/mailchimp/js/jquery.form.min.js"></script>
 <script src="<?= get_template_directory_uri(); ?>/js/script.min.js"></script>
+
+<?php wp_footer(); ?>
 
 <script>
 	//Facebook Group:

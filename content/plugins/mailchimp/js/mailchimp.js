@@ -3,7 +3,6 @@
 	$(function($) {
 		// Change our submit type from HTML (default) to JS
 		$('#mc_submit_type').val('js');
-		
 		// Attach our form submitter action
 		$('#mc_signup_form').ajaxForm({
 			url: mailchimpSF.ajax_url, 
@@ -33,6 +32,7 @@
 			});
 			$('#mc_submit_type').val('js');
 		}
-		$.scrollTo('#mc_signup', {offset: {top: -28}});
+		//remove Scroll to ;-)
+		//$.scrollTo('#mc_signup', {offset: {top: -28}});
 	}
 })(jQuery);

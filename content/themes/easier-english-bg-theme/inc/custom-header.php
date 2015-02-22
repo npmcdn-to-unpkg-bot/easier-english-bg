@@ -18,33 +18,6 @@
  *
  * @since Twenty Twelve 1.0
  */
-function twentytwelve_custom_header_setup() {
-	$args = array(
-		// Text color and image (empty to use none).
-		'default-text-color'     => '515151',
-		'default-image'          => '',
-
-		// Set height and width, with a maximum value for the width.
-		'height'                 => 250,
-		'width'                  => 960,
-		'max-width'              => 2000,
-
-		// Support flexible height and width.
-		'flex-height'            => true,
-		'flex-width'             => true,
-
-		// Random image rotation off by default.
-		'random-default'         => false,
-
-		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback'       => 'twentytwelve_header_style',
-		'admin-head-callback'    => 'twentytwelve_admin_header_style',
-		'admin-preview-callback' => 'twentytwelve_admin_header_image',
-	);
-
-	add_theme_support( 'custom-header', $args );
-}
-add_action( 'after_setup_theme', 'twentytwelve_custom_header_setup' );
 
 /**
  * Loads our special font CSS file.
@@ -53,12 +26,6 @@ add_action( 'after_setup_theme', 'twentytwelve_custom_header_setup' );
  *
  * @return void
  */
-function twentytwelve_custom_header_fonts() {
-	$font_url = twentytwelve_get_font_url();
-	if ( ! empty( $font_url ) )
-		wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
-}
-add_action( 'admin_print_styles-appearance_page_custom-header', 'twentytwelve_custom_header_fonts' );
 
 /**
  * Styles the header text displayed on the blog.
@@ -67,38 +34,6 @@ add_action( 'admin_print_styles-appearance_page_custom-header', 'twentytwelve_cu
  *
  * @since Twenty Twelve 1.0
  */
-function twentytwelve_header_style() {
-	$text_color = get_header_textcolor();
-
-	// If no custom options for text are set, let's bail
-	if ( $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
-		return;
-
-	// If we get this far, we have custom styles.
-	?>
-	<style type="text/css" id="twentytwelve-header-css">
-	<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
-		.site-title,
-		.site-description {
-			position: absolute;
-			clip: rect(1px 1px 1px 1px); /* IE7 */
-			clip: rect(1px, 1px, 1px, 1px);
-		}
-	<?php
-		// If the user has set a custom color for the text, use that.
-		else :
-	?>
-		.site-header h1 a,
-		.site-header h2 {
-			color: #<?php echo $text_color; ?>;
-		}
-	<?php endif; ?>
-	</style>
-	<?php
-}
 
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.

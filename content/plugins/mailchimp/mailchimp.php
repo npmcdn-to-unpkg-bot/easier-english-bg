@@ -93,8 +93,8 @@ function mailchimpSF_load_resources() {
 	// JS
 	if (get_option('mc_use_javascript') == 'on') {
 		if (!is_admin()) {
-			wp_enqueue_script('jquery_scrollto', MCSF_URL.'js/scrollTo.js', array('jquery'), MCSF_VER);
-			wp_enqueue_script('mailchimpSF_main_js', MCSF_URL.'js/mailchimp.js', array('jquery', 'jquery-form'), MCSF_VER);
+			//are you crazy, mailchimp??
+			wp_enqueue_script('mailchimpSF_main_js', MCSF_URL.'js/mailchimp.js', '', MCSF_VER, true);
 			// some javascript to get ajax version submitting to the proper location
 			global $wp_scripts;
 			$wp_scripts->localize('mailchimpSF_main_js', 'mailchimpSF', array(
@@ -110,8 +110,9 @@ function mailchimpSF_load_resources() {
 		wp_enqueue_script('datepicker', MCSF_URL.'/js/datepicker.js', array('jquery','jquery-ui-core'));
 	}
 
-	wp_enqueue_style('mailchimpSF_main_css', home_url('?mcsf_action=main_css&ver='.MCSF_VER));
-	wp_enqueue_style('mailchimpSF_ie_css', MCSF_URL.'css/ie.css');
+	//wp_enqueue_style('mailchimpSF_main_css', home_url('?mcsf_action=main_css&ver='.MCSF_VER));
+	wp_enqueue_style('', '');
+	//wp_enqueue_style('mailchimpSF_ie_css', MCSF_URL.'css/ie.css');
 	global $wp_styles;
 	$wp_styles->add_data( 'mailchimpSF_ie_css', 'conditional', 'IE' );
 }

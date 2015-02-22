@@ -123,43 +123,6 @@ function twentytwelve_get_font_url() {
 }
 
 /**
- * Enqueues scripts and styles for front-end.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_scripts_styles() {
-	global $wp_styles;
-
-	/*
-	 * Adds JavaScript to pages with the comment form to support
-	 * sites with threaded comments (when in use).
-	 */
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-
-	/*
-	 * Adds JavaScript for handling the navigation menu hide-and-show behavior.
-	 */
-	//wp_enqueue_script( 'twentytwelve-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
-
-	$font_url = twentytwelve_get_font_url();
-	if ( ! empty( $font_url ) )
-		wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );
-
-	/*
-	 * Loads our main stylesheet.
-	 */
-	wp_enqueue_style( 'twentytwelve-style', get_stylesheet_uri() );
-
-	/*
-	 * Loads the Internet Explorer specific stylesheet.
-	 */
-	wp_enqueue_style( 'twentytwelve-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentytwelve-style' ), '20121010' );
-	$wp_styles->add_data( 'twentytwelve-ie', 'conditional', 'lt IE 9' );
-}
-add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
-
-/**
  * Adds additional stylesheets to the TinyMCE editor if needed.
  *
  * @uses twentytwelve_get_font_url() To get the Google Font stylesheet URL.
@@ -475,18 +438,6 @@ function twentytwelve_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'twentytwelve_customize_register' );
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- *
- * @since Twenty Twelve 1.0
- */
-function twentytwelve_customize_preview_js() {
-	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20130301', true );
-}
-add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
-
-
-
 //Custom Fields for the Articles:
 function displayCompetionTime($post){
 	$completionTime =  get_post_meta( $post->ID, 'completionTime', true );
@@ -718,6 +669,17 @@ function custom_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+// remove junk from head
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_generator');
+//remove_action('wp_head', 'feed_links', 2);
+//remove_action('wp_head', 'index_rel_link');
+//remove_action('wp_head', 'wlwmanifest_link');
+//remove_action('wp_head', 'feed_links_extra', 3);
+//remove_action('wp_head', 'start_post_rel_link', 10, 0);
+//remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+//remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 //Disable the File Editor, Automatic updates and stop users from uploading plugins/themes directly
 define( 'DISALLOW_FILE_MODS', true );
