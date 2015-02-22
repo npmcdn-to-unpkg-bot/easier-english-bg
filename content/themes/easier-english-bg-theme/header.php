@@ -13,10 +13,13 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <![endif]-->
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%26subset=latin,cyrillic' rel='stylesheet' />
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%26subset=latin,cyrillic' rel='stylesheet' />
 
 	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicons/favicon.ico">
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_url'); ?>/img/favicons/apple-touch-icon-57x57.png">
@@ -37,8 +40,8 @@
 	<meta name="msapplication-config" content="<?php bloginfo('template_url'); ?>/img/favicons/browserconfig.xml">
 
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-		<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 
