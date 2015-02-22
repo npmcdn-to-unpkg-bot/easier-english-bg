@@ -113,7 +113,7 @@ function twentytwelve_get_font_url() {
 
 		$protocol = is_ssl() ? 'https' : 'http';
 		$query_args = array(
-			'family' => 'Open+Sans:400italic,700italic,400,700',
+			'family' => 'Open+Sans:300,400,600,700%26subset=latin,cyrillic',
 			'subset' => $subsets,
 		);
 		$font_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
