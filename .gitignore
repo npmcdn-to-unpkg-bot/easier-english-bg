@@ -1,7 +1,6 @@
 /local-config.php
 /sql-dump-*.sql
 /db-sync
-/content/upgrade/
 .DS_Store
 .htaccess
 /content/themes/easier-english-bg-theme/node_modules
