@@ -8,12 +8,12 @@ module.exports = function(grunt) {
                     mangle: false
                 },
                 files: {
-                    'js/script.min.js': ['js/jquery.mmenu.min.js', 'js/jquery.say.js', 'js/script.js']
+                    'js/script.min.js': ['js/jquery.mmenu.min.js', '../../plugins/mailchimp/js/jquery.form.min.js', 'js/jquery.say.js', 'js/script.js']
                 }
             },
             production: {
                 files: {
-                    'js/script.min.js': ['js/jquery.mmenu.min.js', 'js/jquery.say.js', 'js/script.js']
+                    'js/script.min.js': ['js/jquery.mmenu.min.js', '../../plugins/mailchimp/js/jquery.form.min.js', 'js/jquery.say.js', 'js/script.js']
                 }
             }
         },
