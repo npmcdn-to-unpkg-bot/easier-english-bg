@@ -49,8 +49,8 @@
 					}
 					$author_name = get_the_author_meta( $field = 'first_name' ) . " " . get_the_author_meta( $field = 'last_name' );
 				?>
-				<?php if( isset($author_linkedin) ) echo '<a href='. $author_linkedin . ' class="article-author" target="_blank">'; ?>
-				<img src="<?= $image_url ?>" height="80" width="80" alt="<?= $author_name; ?>" />
+				<?php if( isset($author_linkedin) ) echo '<a href='. $author_linkedin . ' target="_blank">'; ?>
+				<img src="<?= $image_url ?>" class="article-author" height="80" width="80" alt="<?= $author_name; ?>" />
 				<?php if( isset($author_linkedin) ) echo '</a>'; ?>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				<div class="reading-time">
