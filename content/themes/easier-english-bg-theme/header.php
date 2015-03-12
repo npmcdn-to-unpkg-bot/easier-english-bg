@@ -113,15 +113,11 @@
     </div>
 
     <div id="breadcrumbs_holder" class="breadcrumbs">
-        <div class="page_wrapper">
-            <?php
-                if( !is_front_page() && function_exists('bcn_display') ) {
-                    bcn_display();
-                } else {
-                    //echo '<span itemprop="name">EasierEnglish.BG</span>';
-                }
-            ?>
-        </div>
+        <?php if( !is_front_page() && function_exists('bcn_display') ) { ?>
+            <div class="page_wrapper">
+                <?php bcn_display(); ?>
+            </div>
+         <?php } ?>
     </div>
 
 </div>
