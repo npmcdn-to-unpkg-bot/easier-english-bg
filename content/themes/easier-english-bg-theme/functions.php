@@ -688,4 +688,4 @@ remove_action('wp_head', 'wlwmanifest_link');
 //remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 //Disable the File Editor, Automatic updates and stop users from uploading plugins/themes directly
-define( 'DISALLOW_FILE_MODS', true );
+//define( 'DISALLOW_FILE_MODS', true );
