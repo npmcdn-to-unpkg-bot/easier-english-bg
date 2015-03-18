@@ -10,3 +10,5 @@ content/themes/easier-english-bg-theme/php_errorlog
 php_errorlog
 php.ini
 content/aiowps_backups/
+content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log.txt
+content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log-cron-job.txt
