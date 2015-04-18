@@ -54,7 +54,7 @@ if ( post_password_required() )
 
     <?php endif; // have_comments() ?>
 
-    <?php /* comment_form(array(
+    <?php comment_form(array(
         'title_reply' => 'Добави бърз коментар:',
         'label_submit' => __( 'Публикувай!' ),
         'comment_notes_after' => '',
@@ -80,7 +80,7 @@ if ( post_password_required() )
           ),
         'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Коментар:', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="4" aria-required="true" placeholder="Българи, пишете на кирилица :)"></textarea></p>',
         'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Логнат си като: <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Влез с друг акаунт?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>'
-    )); */ ?>
+    )); ?>
 
 
 </div><!-- #comments .comments-area -->
