@@ -204,7 +204,7 @@ $(document).ready(function(){
 	/* Contacts Form END */
 
 
-	/* Ask Question Form START */
+	/* Send a free question Form START */
 	$askQuestion_form = $("#get-free-consultation-form");
 	var required_askQuestion_Form = ["contact_name", "contact_email", "contact_message"];
 	$askQuestion_form_email = $("#contact_email");
@@ -221,7 +221,7 @@ $(document).ready(function(){
 
 			jqxhr.success(function(){
 				$askQuestion_form.fadeOut(function(){
-					$("#feedback_form").html("<p><strong class='success'>Получихме въпроса :)!</strong> Очаквай отговор от нас.</p>").hide().fadeIn(600);
+					$("#feedback_form").html("<p><strong class='success'>Получихме въпроса :)</strong> Очаквай отговор от нас.</p>").hide().fadeIn(600);
 				});
 			});
 			jqxhr.error(function(){
@@ -240,7 +240,7 @@ $(document).ready(function(){
 		$askQuestion_form.submit();
 		return false;
 	});
-	/* Ask Question Form END */
+	/* Send a free question Form END */
 
 
 	/* 
