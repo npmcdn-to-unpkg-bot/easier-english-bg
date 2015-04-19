@@ -88,7 +88,7 @@
                             <p class="contact-email"><input id="contact_email" type="email" name="contact_email" placeholder="... твоят e-mail (за да се свържем с теб)" size="30" value=""></p>
                             <p class="default-field">
                                 <select id="contact_city" type="city" name="contact_city" class="default-select">
-                                    <option selected disabled value="Няма информация">От къде ни пишеш?</option>
+                                    <option selected disabled value="-">От къде ни пишеш?</option>
                                     <option value="София">София</option>
                                     <option value="Варна">Варна</option>
                                     <option value="Пловдив">Пловдив</option>
@@ -120,7 +120,7 @@
                             </p>
                             <p class="default-field">
                                 <select id="contact_age" name="contact_age" class="default-select">
-                                    <option selected disabled value="Няма информация">На колко години си?</option>
+                                    <option selected disabled value="-">На колко години си?</option>
                                     <option value="13 - 18">13 - 18 години</option>
                                     <option value="19 - 25">19 - 25 години</option>
                                     <option value="25 - 35">25 - 30 години</option>
