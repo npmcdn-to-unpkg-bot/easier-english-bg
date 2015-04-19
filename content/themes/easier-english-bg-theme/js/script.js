@@ -210,7 +210,7 @@ $(document).ready(function(){
 	$askQuestion_form_email = $("#contact_email");
 	$askQuestion_form.submit(function(){
 		if ( sendForm($askQuestion_form, required_askQuestion_Form, $askQuestion_form_email) ) {
-			var jqxhr = $.post( templateUrl + "/EmailSenders/sendQuestion123.php", {
+			var jqxhr = $.post( templateUrl + "/EmailSenders/sendQuestion.php", {
 				contact_name: $("#contact_name").val(),
 				contact_email: $("#contact_email").val(),
 				contact_message: $("#contact_message").val(),
