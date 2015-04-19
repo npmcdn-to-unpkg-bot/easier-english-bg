@@ -65,7 +65,7 @@ get_header(); ?>
 
             <div class="article_info_wrapper group">
                 <div class="item_group">
-                    Подкрепи ни: &nbsp;&nbsp;
+                    Оценяваш труда ни? Можеш да ни подкрепиш: &nbsp;&nbsp;
                     <div class="g-plusone googlePlusBut" data-size="medium" data-href="<?= get_permalink( $id ) ?>"></div>
                     <div class="fb-like" data-width="100" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div>
                 </div>
