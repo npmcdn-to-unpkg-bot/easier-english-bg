@@ -1,6 +1,6 @@
 <?php
 
-$email_to = "easierenglish.bg@gmail.com";
+$email_to = "kaloyan.kosev@easierenglish.bg";
 extract($_POST);
 
 $email_subject = "Въпрос към урок: " . $topic;
@@ -10,6 +10,8 @@ $email_message = <<<EOT
 
 Урок: $topic
 Име: $contact_name
+Град: $contact_city
+Възраст: $contact_age
 E-mail: $contact_email
 
 Съобщение: $contact_message
