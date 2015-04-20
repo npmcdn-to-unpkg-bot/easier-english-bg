@@ -73,7 +73,70 @@
         <div id="post_mainContent" class="entry-content">
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
+
+
+            <h4 class="question-form">Имаш въпрос?</h4>
+            <p>Получи <a href="javascript:;" id="fire_feedbackForm"><steong>безплатна</steong> консултация от квалифициран учител, просто попитай :)</span></a>
+
+            <div id="feedback_form" class="article_feedback_holder" style="display: none;">
+                <p>Задай своя въпрос:<br />
+
+                    <form id="get-free-consultation-form" class="contactsForm">
+                        <textarea id="contact_message" name="contact_message" placeholder="Хей, искам да ви попитам относно..." rows="4"></textarea>
+                        <div class="group">
+                            <p class="contact-name"><input id="contact_name" type="text" name="contact_name" placeholder="Твоето име..." size="30" value=""></p>
+                            <p class="contact-email"><input id="contact_email" type="email" name="contact_email" placeholder="... твоят e-mail (за да се свържем с теб)" size="30" value=""></p>
+                            <p class="default-field">
+                                <select id="contact_city" type="city" name="contact_city" class="default-select">
+                                    <option selected disabled value="-">От къде ни пишеш?</option>
+                                    <option value="София">София</option>
+                                    <option value="Варна">Варна</option>
+                                    <option value="Пловдив">Пловдив</option>
+                                    <option value="Бургас">Бургас</option>
+                                    <option value="Русе">Русе</option>
+                                    <option value="Стара Загора">Стара Загора</option>
+                                    <option value="Плeвен">Плeвен</option>
+                                    <option value="Сливен">Сливен</option>
+                                    <option value="Добрич">Добрич</option>
+                                    <option value="Шумен">Шумен</option>
+                                    <option value="Перник">Перник</option>
+                                    <option value="Хасково">Хасково</option>
+                                    <option value="Ямбол">Ямбол</option>
+                                    <option value="Пазарджик">Пазарджик</option>
+                                    <option value="Благоевград">Благоевград</option>
+                                    <option value="Велико Търново">Велико Търново</option>
+                                    <option value="Враца">Враца</option>
+                                    <option value="Габрово">Габрово</option>
+                                    <option value="Видин">Видин</option>
+                                    <option value="Монтана">Монтана</option>
+                                    <option value="Кюстендил">Кюстендил</option>
+                                    <option value="Кърджали">Кърджали</option>
+                                    <option value="Търговище">Търговище</option>
+                                    <option value="Ловеч">Ловеч</option>
+                                    <option value="Силистра">Силистра</option>
+                                    <option value="Разград">Разград</option>
+                                    <option value="Смолян">Смолян</option>
+                                </select>
+                            </p>
+                            <p class="default-field">
+                                <select id="contact_age" name="contact_age" class="default-select">
+                                    <option selected disabled value="-">На колко години си?</option>
+                                    <option value="13 - 18">13 - 18 години</option>
+                                    <option value="19 - 25">19 - 25 години</option>
+                                    <option value="25 - 35">25 - 30 години</option>
+                                    <option value="35 - 40">30 - 40 години</option>
+                                    <option value="40+">40+ години</option>
+                                </select>
+                            </p>
+                        </div>
+                        <button id="submit_questionForm" class="submit_button ask-question-submit">Изпрати!</button>
+                    </form>
+                </p>
+            </div>
+
         </div><!-- .entry-content -->
+
+
         <footer class="entry-meta">
             <?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
 

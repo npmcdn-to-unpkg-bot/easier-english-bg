@@ -64,26 +64,10 @@ get_header(); ?>
             <?php get_template_part( 'content', 'superFormat' ); ?>
 
             <div class="article_info_wrapper group">
-                Имаш въпрос: 
-                <button id="fire_feedbackForm" class="slim_button"><span class="feedback">&#x2764;</span> Попитай!</button>
                 <div class="item_group">
-                    Подкрепи ни: &nbsp;&nbsp;
+                    Оценяваш труда ни? Можеш да ни подкрепиш: &nbsp;&nbsp;
                     <div class="g-plusone googlePlusBut" data-size="medium" data-href="<?= get_permalink( $id ) ?>"></div>
                     <div class="fb-like" data-width="100" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div>
-                </div>
-
-                <div id="feedback_form" class="article_feedback_holder" style="display: none;">
-                    <p>Не се колебай да ни изпратиш въпрос :)<br />
-
-                        <form id="ask_question_form" class="contactsForm">
-                            <div class="group">
-                                <p class="contact-name"><input id="contact_name" type="text" name="contact_name" placeholder="Твоето име..." size="30" value=""></p>
-                                <p class="contact-email"><input id="contact_email" type="email" name="contact_email" placeholder="... твоят e-mail (за да се свържем с теб)" size="30" value=""></p>
-                            </div>
-                            <p><textarea id="contact_message" name="contact_message" placeholder="Искам да попитам относно..." rows="4"></textarea></p>
-                            <button id="submit_questionForm" class="submit_button">Изпрати!</button>
-                        </form>
-                    </p>
                 </div>
             </div>
 
