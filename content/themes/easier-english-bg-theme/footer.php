@@ -44,6 +44,7 @@
         <div class="footer-links">
             <a itemprop="url" href="http://easierenglish.bg" title="Уроци по английски език | EasierEnglish.BG">EasierEnglish.BG</a> &copy; 2013 - <?php echo date("Y"); ?>
             <a href="http://easierenglish.bg/мисия/">Мисия</a>
+            <a href="http://easierenglish.bg/партньори/">Партньори</a>
             <a href="http://easierenglish.bg/свържи-се-с-нас/" title="Свържи се с нас">Контакти</a>
             <a href="http://easierenglish.bg/feed/" target="_blank" title="Пълна RSS Емисия">RSS Емисия</a>
         </div>
