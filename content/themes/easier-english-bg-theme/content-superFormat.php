@@ -74,12 +74,14 @@
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
 
+            <br>
 
+            <!--
             <h4 class="question-form">Имаш въпрос?</h4>
             <p>Получи <a href="javascript:;" id="fire_feedbackForm"><steong>безплатна</steong> консултация от квалифициран учител, просто попитай :)</span></a>
 
             <div id="feedback_form" class="article_feedback_holder" style="display: none;">
-                <p>Задай своя въпрос и благодарение на нашите партньори от <a href="http://belleducation.net/" target="_blank">Bell Education</a>, ще получиш отговор от техен квалифициран учител:<br />
+                <p>Задай своя въпрос и благодарение на нашите партньори от ..., ще получиш отговор от техен квалифициран учител:<br />
 
                     <form id="get-free-consultation-form" class="contactsForm">
                         <textarea id="contact_message" name="contact_message" placeholder="Хей, искам да ви попитам относно..." rows="4"></textarea>
@@ -133,6 +135,7 @@
                     </form>
                 </p>
             </div>
+            -->
 
         </div><!-- .entry-content -->
 
