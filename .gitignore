@@ -14,3 +14,4 @@ content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log.txt
 content/plugins/all-in-one-wp-security-and-firewall/logs/wp-security-log-cron-job.txt
 node_modules/
 content/themes/easier-english-bg-theme/css/style.min.css.map
+content/themes/easier-english-bg-theme/js/script.min.js.map
