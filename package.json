@@ -3,6 +3,7 @@
   "devDependencies": {},
   "dependencies": {
     "gulp": "^3.9.0",
-    "laravel-elixir": "^3.4.1"
+    "laravel-elixir": "^3.4.1",
+    "laravel-elixir-imagemin": "^0.2.1"
   }
 }
