@@ -12,6 +12,7 @@ elixir(function(mix) {
      * http://laravel.com/docs/5.1/elixir#sass
      */
     .sass('style.scss', 'content/themes/easier-english-bg-theme/css/style.css')
+    .sass('text-to-speech.scss', 'content/themes/easier-english-bg-theme/css/text-to-speech.min.css')
     /**
      * Combine the css files into a single file
      * http://laravel.com/docs/5.1/elixir#plain-css
@@ -20,6 +21,7 @@ elixir(function(mix) {
         '../../../lib/normalize-css/normalize.css',
         'style.css'
     ], 'content/themes/easier-english-bg-theme/css/style.min.css')
+
     /**
      * Combine the js files into a single file
      * http://laravel.com/docs/5.1/elixir#javascript
@@ -27,6 +29,9 @@ elixir(function(mix) {
     .scripts([
         'jquery.mmenu.min.js',
         '../../../plugins/mailchimp/js/jquery.form.min.js',
+
+        // JS responsible for the TTS integration
+        'text-to-speech.js',
 
         'script.js'
     ], 'content/themes/easier-english-bg-theme/js/script.min.js')

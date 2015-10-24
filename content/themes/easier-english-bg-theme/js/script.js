@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	// Init the text to speech
+	EasierEnglish.TextToSpeech.init();
+
 	//Exam START:
 	function whereAmI() {
 		var location = window.location.href.match(/([^/])+/g);
