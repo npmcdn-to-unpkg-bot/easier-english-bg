@@ -457,9 +457,4 @@ $(document).ready(function(){
 		// we are in Opera
 		$("body").css("font-family", "Arial, sans-serif");
 	}
-
-	$("[data-say]").on("click", function(){
-		$(this).addClass("progress");
-		$.say($(this).text());
-	});
 });

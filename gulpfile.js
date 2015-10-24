@@ -27,7 +27,6 @@ elixir(function(mix) {
     .scripts([
         'jquery.mmenu.min.js',
         '../../../plugins/mailchimp/js/jquery.form.min.js',
-        'jquery.say.js',
 
         'script.js'
     ], 'content/themes/easier-english-bg-theme/js/script.min.js')

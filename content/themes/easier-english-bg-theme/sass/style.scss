@@ -2642,31 +2642,6 @@ html.mm-nooverflowscrolling.mm-opened {
     margin-left: 30px;
 }
 
-span[data-say] {
-    border-bottom: 1px dashed #ace1af;
-    cursor: pointer;
-}
-span[data-say]:hover {
-    border-bottom: 1px solid #ace1af;
-}
-span[data-say].progress:hover {
-    cursor: progress;
-}
-span[data-say]:after {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url(../img/speaker.svg) no-repeat 100% 100%;
-    transition: all .2s ease-in-out;
-}
-span[data-say]:hover:after {
-    transform: rotate(-410deg);
-    -ms-transform: rotate(-410deg);
-    -webkit-transform: rotate(-410deg);
-}
-
-
 @media screen and (max-width: 1280px){
     .widget-area #s,
     .mc_input[type="email"] {
