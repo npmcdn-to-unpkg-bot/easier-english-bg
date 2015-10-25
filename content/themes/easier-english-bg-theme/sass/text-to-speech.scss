@@ -1,0 +1,21 @@
+span[data-say] {
+    border-bottom: 1px dashed #ace1af;
+    cursor: pointer;
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('/content/themes/easier-english-bg-theme/img/speaker.svg') no-repeat 100% 100%;
+        transition: all .2s ease-in-out;
+    }
+    &:hover {
+        border-bottom: 1px solid #ace1af;
+        &:after {
+            transform: rotate(-410deg);
+        }
+    }
+    &.progress:hover {
+        cursor: progress;
+    }
+}

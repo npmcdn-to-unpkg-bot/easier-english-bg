@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	// Init the text to speech
+	EasierEnglish.TextToSpeech.init();
+
 	//Exam START:
 	function whereAmI() {
 		var location = window.location.href.match(/([^/])+/g);
@@ -457,9 +460,4 @@ $(document).ready(function(){
 		// we are in Opera
 		$("body").css("font-family", "Arial, sans-serif");
 	}
-
-	$("[data-say]").on("click", function(){
-		$(this).addClass("progress");
-		$.say($(this).text());
-	});
 });
