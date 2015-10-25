@@ -4,7 +4,7 @@
     /**
      * Helper function with triggers the text to speech
      * for the English words and phrases.
-     * Done via the Web Speech API
+     * Done via the Speech Synthesis API
      * https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API?hl=en
      */
     EasierEnglish.TextToSpeech = {
@@ -17,7 +17,7 @@
          *
          * Get the styles in css/text-to-speech.css
          * and attach them in the document head
-         * if the Web Speech API is available
+         * if the Speech Synthesis API is available
          */
         init: function(){
             if ('speechSynthesis' in window) {
@@ -25,6 +25,7 @@
                 msg.voiceURI = 'native';
                 msg.lang = 'en-US';
 
+                // Attach event
                 $('[data-say]').on('click', function(){
                     msg.text = $(this).text().trim();
                     speechSynthesis.speak(msg);

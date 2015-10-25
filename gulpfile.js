@@ -30,7 +30,7 @@ elixir(function(mix) {
         'jquery.mmenu.min.js',
         '../../../plugins/mailchimp/js/jquery.form.min.js',
 
-        // JS responsible for the TTS integration
+        // JS responsible for the Speech Synthesis API integration
         'text-to-speech.js',
 
         'script.js'
