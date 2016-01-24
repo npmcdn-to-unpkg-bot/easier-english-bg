@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
-	// Init the text to speech
+	// Init the text to speech, see text-to-speech.js
 	EasierEnglish.TextToSpeech.init();
+
+	// Build and init the mobile menu, see mobile-menu.js
+	EasierEnglish.MobileMenu();
 
 	//Exam START:
 	function whereAmI() {
@@ -397,62 +400,6 @@ $(document).ready(function(){
 			$answer.slideUp();
 		}
 	});
-
-
-	/*
-	### Mobile Menu
-	*/
-	//Move Element:
-	$.fn.moveTo = function(selector){
-        return this.each(function(){
-            var cl = $(this).clone();
-            $(cl).prependTo(selector);
-            $(this).remove();
-        });
-    };
-    $(window).on("resize", function() {
-    	if( $(this).width() < 800 ) {
-    		$mainMenuItems = $("#menu-default-menu > li").not(".menu-item-has-children");
-			$mainCategoriesItems = $("#categories-2 ul li");
-
-			var mobile_nav_string = '<nav id="mobile_menu"><ul>';
-			$mainMenuItems.each(function(index, el){
-				mobile_nav_string += '<li>' + $(el).html() + '</li>';
-			});
-
-			mobile_nav_string += '<li><a id="fire_mobile_categories_sub" href="javascript:;">Уроци по категории</a><ul id="mobile_categories_submenu">';
-			$mainCategoriesItems.each(function(index, el){
-				mobile_nav_string += '<li>' + $(el).html() + '</li>';
-			});
-
-			mobile_nav_string += '</ul></li>';
-
-			mobile_nav_string += '<li><form role="search" method="get" class="searchform" action="http://easierenglish.bg/"><input type="text" value="" name="s" id="s" placeholder="Потърси урок..."></form></li>';
-
-			mobile_nav_string += '</ul></nav>';
-
-			$("body").append(mobile_nav_string);
-			$('#mobile_menu').mmenu();
-			//Header Fix:
-			$('#masthead').moveTo('.mm-page');
-			//Toggle Button:
-			$('#masthead').append('<a id="fire_mobileMenu" class="mobile_menu_button" href="javascript:;"><div class="mobile_menu_icon"></div></a>');
-			$("#fire_mobileMenu").on("click", function(){
-				$('#mobile_menu').trigger("open");
-			});
-
-			$("#fire_mobile_categories_sub").on("click", function(){
-				$('#mobile_categories_submenu').trigger("open");
-			});
-
-			//Turn off the event:
-			$(window).off("resize");
-    	}
-    });
-	//Directly fire mobile:
-    if ( $(window).width() < 800 ){
-    	$(window).resize();
-    }
 
 
     //Opera font fix:

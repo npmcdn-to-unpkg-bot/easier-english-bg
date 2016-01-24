@@ -33,6 +33,9 @@ elixir(function(mix) {
         // JS responsible for the Speech Synthesis API integration
         'text-to-speech.js',
 
+        // Build and init mobile menu plugin
+        'mobile-menu.js',
+
         'script.js'
     ], 'content/themes/easier-english-bg-theme/js/script.min.js')
     /**
