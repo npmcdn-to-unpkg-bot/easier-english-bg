@@ -1,5 +1,5 @@
 (function() {
-    window.EasierEnglish = window.EasierEnglish || {};
+    window.EEApp = window.EEApp || {};
 
     /**
      * Helper function with triggers the text to speech
@@ -7,7 +7,7 @@
      * Done via the Speech Synthesis API
      * https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API?hl=en
      */
-    EasierEnglish.TextToSpeech = {
+    EEApp.TextToSpeech = {
         /**
          * Start by Feature detection
          * to make sure the browser supports it.

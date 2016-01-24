@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 	// Init the text to speech, see text-to-speech.js
-	EasierEnglish.TextToSpeech.init();
+	EEApp.TextToSpeech.init();
 
 	// Build and init the mobile menu, see mobile-menu.js
-	EasierEnglish.MobileMenu();
+	EEApp.MobileMenu();
 
 	//Exam START:
 	function whereAmI() {

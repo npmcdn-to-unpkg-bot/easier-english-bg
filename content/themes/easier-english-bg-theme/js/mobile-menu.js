@@ -1,7 +1,7 @@
 (function() {
-    window.EasierEnglish = window.EasierEnglish || {};
+    window.EEApp = window.EEApp || {};
 
-    EasierEnglish.MobileMenu = function(){
+    EEApp.MobileMenu = function(){
         var self = this;
 
         /**
