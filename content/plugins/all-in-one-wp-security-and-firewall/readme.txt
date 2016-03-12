@@ -1,10 +1,10 @@
 === All In One WP Security & Firewall ===
-Contributors: Tips and Tricks HQ, wpsolutions, Peter Petreski, Ruhul Amin, mbrsolution, samuelaguilera
+Contributors: Tips and Tricks HQ, wpsolutions, Peter Petreski, Ruhul Amin, mbrsolution, gdavide
 Donate link: https://www.tipsandtricks-hq.com
 Tags: security, secure, Anti Virus, antivirus, ban, ban hacker, virus, firewall, firewall security, login, lockdown, htaccess, hack, malware, vulnerability, protect, protection, phishing, database, backup, plugin, sql injection, ssl, restrict, login captcha, bot, hotlink, 404 detection, admin, rename, all in one, scan, scanner, iframe,
 Requires at least: 3.5
-Tested up to: 4.1.1
-Stable tag: 3.9.0
+Tested up to: 4.4
+Stable tag: 4.0.6
 License: GPLv3
 
 A comprehensive, user-friendly, all in one WordPress security and firewall plugin for your site.
@@ -37,6 +37,7 @@ Below is a list of the security and firewall features offered in this plugin:
 * The plugin will also detect if you have any WordPress user accounts which have identical login and display names. Having account's where display name is identical to login name is bad security practice because 
 you are making it 50% easier for hackers because they already know the login name.
 * Password strength tool to allow you to create very strong passwords.
+* Stop user enumeration. So users/bots cannot discover user info via author permalink.
 
 = User Login Security =
 * Protect against "Brute Force Login Attack" with the Login Lockdown feature. Users with a certain IP address or range will be locked out of the system for a predetermined amount of time based on the configuration settings and you can also choose to be notified 
@@ -80,18 +81,20 @@ via email whenever somebody gets locked out due to too many login attempts.
 This plugin allows you to easily add a lot of firewall protection to your site via htaccess file. An htaccess file is processed by your web server before any other code on your site. 
 So these firewall rules will stop malicious script(s) before it gets a chance to reach the WordPress code on your site.
 
-* Access control facility
-* Instantly activate a selection of firewall settings ranging from basic, intermediate and advanced
+* Access control facility.
+* Instantly activate a selection of firewall settings ranging from basic, intermediate and advanced.
 * Enable the famous "5G Blacklist" Firewall rules courtesy of [Perishable Press](http://perishablepress.com/)
-* Forbid proxy comment posting
-* Disable trace and track
-* Deny bad or malicious query strings
+* Forbid proxy comment posting.
+* Block access to debug log file.
+* Disable trace and track.
+* Deny bad or malicious query strings.
 * Protect against Cross Site Scripting (XSS) by activating the comprehensive advanced character string filter.
 or malicious bots who do not have a special cookie in their browser. You (the site admin) will know how to set this special cookie and be able to log into your site.
 * WordPress PingBack Vulnerability Protection feature. This firewall feature allows the user to prohibit access to the xmlrpc.php file in order to protect against certain vulnerabilities in the pingback functionality. This is also helpful to block bots from constantly accessing the xmlrpc.php file and wasting your server resource.
 * Ability to block fake Googlebots from crawling your site.
 * Ability to prevent image hotlinking. Use this to prevent others from hotlinking your images.
 * Ability to log all 404 events on your site. You can also choose to automatically block IP addresses that are hitting too many 404s.
+* Ability to add custom rules to block access to various resources of your site.
 
 = Brute force login attack prevention =
 * Instantly block Brute Force Login Attacks via our special Cookie-Based Brute Force Login Prevention feature. This firewall functionality will block all login attempts from people and bots.
@@ -110,6 +113,7 @@ or malicious bots who do not have a special cookie in their browser. You (the si
 * Monitor the most active IP addresses which persistently produce the most SPAM comments and instantly block them with the click of a button.
 * Prevent comments from being submitted if it doesn't originate from your domain (this should reduce some SPAM bot comment posting on your site).
 * Add a captcha to your wordpress comment form to add security against comment spam.
+* Automatically and permanently block IP addresses which have exceeded a certain number of comments labeled as SPAM.
 
 = Front-end Text Copy Protection =
 * Ability to disable the right click, text selection and copy option for your front-end.
@@ -149,6 +153,7 @@ Currently available translations:
 - Russian
 - Chinese
 - Portuguese (Brazil)
+- Persian
 
 Visit the [WordPress Security Plugin](https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin) page for more details.
 
@@ -176,6 +181,94 @@ https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin
 None
 
 == Changelog ==
+
+= 4.0.6 =
+- Removed the viewing of contents of wp-config.php and .htaccess files in order to protect sensitive info.
+- Fixed more potential XSS vulnerabilities in some other settings pages. (Once again many thanks to Erin Germ for pointing these out)
+
+= 4.0.5 =
+- Fixed some potential XSS vulnerability in the blacklist, file system and file change detection settings pages. (Many thanks to Erin Germ for pointing these out)
+
+= 4.0.4 =
+- Added new feature: Auto Block Spammer IPs. This feature will automatically and permanently block IP addresses which are linked to comment SPAM. (see SPAM Prevention -> Comment SPAM IP Monitoring tab)
+- Added compatibility fix for the qTranslate-X plugin in the rename login page feature.
+- Added ability to send to more than one email address for file change detection feature notification.
+- Fixed bug in whois library when searching ARIN registry.
+- Fixed the handling of display of longer IPV6 strings in dashboard summary table.
+- Added hook for WooCommerce login form to display unlock button.
+- Added Dutch language translation. Thanks to Jeroen van der Linde for providing the translation files.
+- Typo fix in the "stop users enumeration" feature.
+
+= 4.0.3 =
+- Added urlencode to query strings in URLs to prevent unexpected behaviour. Thanks to @chesio for spotting the issue.
+- Added new feature to stop users enumeration. Thanks to Davide Giunchi @davidegiunchidiennea for adding this.
+- Added a more robust code for check_user_exists function. Thanks to Christian Carey.
+- Added cron cleanup of the global meta table.
+- Added a title in each of the admin interface menu.
+
+= 4.0.2 =
+- Added ability to enable/disable debug from the settings menu.
+- Fixed bug related to using IP ranges in the whitelist settings.
+- Added IPv6 support for the whitelist feature.
+- Added check in file permissions feature for cases where wp-config.php may be located outside of root.
+- Added wp cron DB cleanup events for various tables which may grow large over time.
+- Changed firewall rule for proxy comment prevention to reflect suggestion made by Thomas O. in forum (https://wordpress.org/support/topic/high-server-cpu-with-proxy-login)
+- Fixed CSS styling issue in admin pages for WordPrss 4.4
+
+= 4.0.1 =
+- Renamed the language files to match the new textdomain slug to fix the language translation bug.
+- Fixed bug related to the rename login feature and force logout or logout expiry events.
+- Applied fix for log being generated by events table DB insert.
+- Corrected a function call to static version of display error msg.
+
+= 4.0.0 =
+- Updated text domain to match expected value for translate.wordpress.org translation system.
+- Fixed bug related to multi-site user_roles not being updated for child sites.
+- Fixed minor bug in rename login feature.
+- Updated the Italian language file. 
+
+= 3.9.9 =
+- Fixed an issue with the rename login page feature for WordPress 4.3
+- Added esc_attr() sanitization to some of the relevant parameters
+- Added the necessary changes to allow activation via wp-cli
+
+= 3.9.8 =
+- Added guard against possible XSS in the unlock request feature.
+
+= 3.9.7 =
+- Added new feature which allows custom .htaccess rules. (See "Custom Rules" tab in Firewall menu). You can now use this to add custom rules to block access to various resources on your site.
+- Added a new feature to block access to the wp-content/debug.log file (WordPress creates this file if you enabled debug loggin option in the config file).
+- Removed the "v" from version number of the plugin.
+- Completed testing with WordPress 4.3.
+
+= 3.9.6 =
+- Added Rename Login page feature from the "Brute Force" menu to multisite sub-sites.
+- Removed invalid "length" attribute from input element in captcha code.
+- Fixed reset password feature whereby the URL which is sent out in the email for cases when rename login feature is enabled was not decoded properly.
+- Corrected the check for boolean false if returned from wpdb query result.
+- Added media button for wp editor in maintenance settings page.
+
+= 3.9.5 =
+- Fixed minor bug - IP addresses blocked due to '404' were not being listed in the display table.
+- Updated the Russian language translation file.
+- The automatic database table prefix generation value will use a-z characters only.
+- Added esc_url sanitization to the add_query_arg/remove_query_arg function instances to prevent possible XSS.
+
+= 3.9.4 =
+- The sort order and orderby parameters now use a whitelisting approach for sanitization.
+
+= 3.9.3 =
+- Fixed the sort order not working in the 404 error logging and account activity page.
+
+= 3.9.2 =
+- Added a check for registration captcha feature to prevent errors when using another captcha plugin. 
+- Improved a few SQL statements.
+
+= 3.9.1 =
+- Added new "Force Logout" feature which will instantly force a certain user to be logged out of their session. (See the "Logged In Users" tab in User Login menu)
+- Added more security protection for aiowps log files by creating .htaccess file and rules. AIOWPS log files can now only be viewed via dashboard menu, in new tab called "AIOWPS Logs". (NOTE:This security currently applies only for apache or similar servers)
+- Added backticks to SQL statement for DB prefix change to help prevent errors.
+- Added protection against possible SQL injection attacks.
 
 = 3.9.0 =
 - Added some robustness to the file-scan code.

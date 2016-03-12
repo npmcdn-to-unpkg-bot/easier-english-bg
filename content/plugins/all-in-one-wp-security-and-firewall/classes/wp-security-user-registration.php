@@ -6,7 +6,9 @@ class AIOWPSecurity_User_Registration
     {
         global $aio_wp_security;
         add_action('user_register', array(&$this, 'aiowps_user_registration_action_handler'));
-        add_filter('registration_errors', array(&$this, 'aiowps_validate_registration_with_captcha'), 10, 3);
+        if($aio_wp_security->configs->get_value('aiowps_enable_registration_page_captcha') == '1'){
+            add_filter('registration_errors', array(&$this, 'aiowps_validate_registration_with_captcha'), 10, 3);
+        }
     }
     
 
@@ -50,7 +52,7 @@ class AIOWPSecurity_User_Registration
         if($locked == null){
             //user is not locked continue
         }else{
-            $errors->add('authentication_failed', __('<strong>ERROR</strong>: You are not allowed to register because your IP address is currently locked!', 'aiowpsecurity'));
+            $errors->add('authentication_failed', __('<strong>ERROR</strong>: You are not allowed to register because your IP address is currently locked!', 'all-in-one-wp-security-and-firewall'));
             return $errors;
         }
         
@@ -62,8 +64,8 @@ class AIOWPSecurity_User_Registration
             if($submitted_encoded_string !== $_POST['aiowps-captcha-string-info'])
             {
                 //This means a wrong answer was entered
-                //return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'aiowpsecurity'));
-                $errors->add('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'aiowpsecurity'));
+                //return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'all-in-one-wp-security-and-firewall'));
+                $errors->add('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'all-in-one-wp-security-and-firewall'));
                 return $errors;
             }
         }
