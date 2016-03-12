@@ -1,5 +1,7 @@
 <?php
 
+include_once(dirname(__FILE__) . '/wp-security-configure-settings.php');//Allows activating via wp-cli
+
 class AIOWPSecurity_Deactivation
 {
     static function run_deactivation_tasks()
@@ -12,20 +14,5 @@ class AIOWPSecurity_Deactivation
         
         //Deactivate all firewall and other .htaccess rules
         AIOWPSecurity_Configure_Settings::turn_off_all_firewall_rules();
-    }
-    
-    static function get_original_file_contents($key_description)
-    {
-        global $wpdb;
-        $aiowps_global_meta_tbl_name = AIOWPSEC_TBL_GLOBAL_META_DATA;
-        $resultset = $wpdb->get_row("SELECT * FROM $aiowps_global_meta_tbl_name WHERE meta_key1 = '$key_description'", OBJECT);
-        if($resultset){
-            $file_contents = maybe_unserialize($resultset->meta_value2);
-            return $file_contents;
-        }
-        else
-        {
-            return false;
-        }
     }
 }
