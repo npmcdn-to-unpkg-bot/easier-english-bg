@@ -38,12 +38,13 @@ class AIOWPSecurity_User_Login
             if($aio_wp_security->configs->get_value('aiowps_allow_unlock_requests')=='1')
             {
                 add_action('login_form', array(&$this, 'insert_unlock_request_form'));
+                add_action('woocommerce_login_form', array(&$this, 'insert_unlock_request_form'));
             }
             $aio_wp_security->debug_logger->log_debug("Login attempt from blocked IP range - ".$user_locked['failed_login_ip'],2);
-            return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Login failed because your IP address has been blocked. Please contact the administrator.', 'aiowpsecurity'));
+            return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Login failed because your IP address has been blocked. Please contact the administrator.', 'all-in-one-wp-security-and-firewall'));
             //$unlock_msg_form = $this->user_unlock_message();
             //return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Login failed because your IP address has been blocked.
-              //                  Please contact the administrator.', 'aiowpsecurity').$unlock_msg_form);
+              //                  Please contact the administrator.', 'all-in-one-wp-security-and-firewall').$unlock_msg_form);
         }
         
         //Check if captcha enabled
@@ -66,10 +67,10 @@ class AIOWPSecurity_User_Login
                         }
                         else
                         {
-                            return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'aiowpsecurity'));
+                            return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'all-in-one-wp-security-and-firewall'));
                         }
                     }
-                    return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'aiowpsecurity'));
+                    return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Your answer was incorrect - please try again.', 'all-in-one-wp-security-and-firewall'));
                 }
             }
         }
@@ -79,11 +80,11 @@ class AIOWPSecurity_User_Login
         if ( empty($username) || empty($password) ) { //Existing WP core code
             $error = new WP_Error();
             if (empty($username)){
-                $error->add('empty_username', __('<strong>ERROR</strong>: The username field is empty.', 'aiowpsecurity'));
+                $error->add('empty_username', __('<strong>ERROR</strong>: The username field is empty.', 'all-in-one-wp-security-and-firewall'));
             }
 
             if (empty($password)){
-                $error->add('empty_password', __('<strong>ERROR</strong>: The password field is empty.', 'aiowpsecurity'));
+                $error->add('empty_password', __('<strong>ERROR</strong>: The password field is empty.', 'all-in-one-wp-security-and-firewall'));
             }
             return $error;
         }
@@ -103,10 +104,10 @@ class AIOWPSecurity_User_Login
             if($aio_wp_security->configs->get_value('aiowps_set_generic_login_msg')=='1')
             {
                 //Return generic error message if configured
-                return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid login credentials.', 'aiowpsecurity'));
+                return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid login credentials.', 'all-in-one-wp-security-and-firewall'));
             } else
             {
-                return new WP_Error('invalid_username', __('<strong>ERROR</strong>: Invalid username.', 'aiowpsecurity'));
+                return new WP_Error('invalid_username', __('<strong>ERROR</strong>: Invalid username.', 'all-in-one-wp-security-and-firewall'));
             }
 	}
         
@@ -129,10 +130,10 @@ class AIOWPSecurity_User_Login
             if($aio_wp_security->configs->get_value('aiowps_set_generic_login_msg')=='1')
             {
                 //Return generic error message if configured
-                return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid login credentials.', 'aiowpsecurity'));
+                return new WP_Error('authentication_failed', __('<strong>ERROR</strong>: Invalid login credentials.', 'all-in-one-wp-security-and-firewall'));
             } else 
             {
-                return new WP_Error('incorrect_password', sprintf(__('<strong>ERROR</strong>: Incorrect password. <a href="%s" title="Password Lost and Found">Lost your password</a>?', 'aiowpsecurity'), site_url('wp-login.php?action=lostpassword', 'login')));
+                return new WP_Error('incorrect_password', sprintf(__('<strong>ERROR</strong>: Incorrect password. <a href="%s" title="Password Lost and Found">Lost your password</a>?', 'all-in-one-wp-security-and-firewall'), site_url('wp-login.php?action=lostpassword', 'login')));
             }
         }
         
@@ -143,7 +144,7 @@ class AIOWPSecurity_User_Login
                 $user_meta_info = get_user_meta($userdata->ID, 'aiowps_account_status', TRUE);
                 if ($user_meta_info == 'pending'){
                     //Return generic error message if configured
-                    return new WP_Error('authentication_failed', __('<strong>ACCOUNT PENDING</strong>: Your account is currently not active. An administrator needs to activate your account before you can login.', 'aiowpsecurity'));
+                    return new WP_Error('authentication_failed', __('<strong>ACCOUNT PENDING</strong>: Your account is currently not active. An administrator needs to activate your account before you can login.', 'all-in-one-wp-security-and-firewall'));
                 }
         }
         $user =  new WP_User($userdata->ID);
@@ -216,7 +217,7 @@ class AIOWPSecurity_User_Login
             $this->send_ip_lock_notification_email($username, $ip_range, $ip);
             $aio_wp_security->debug_logger->log_debug("The following IP address range has been locked out for exceeding the maximum login attempts: ".$ip_range,2);//Log the lockdown event
         }
-        else if ($result == FALSE)
+        else if ($result === FALSE)
         {
             $aio_wp_security->debug_logger->log_debug("Error inserting record into ".$login_lockdown_table,4);//Log the highly unlikely event of DB error
         }
@@ -248,7 +249,7 @@ class AIOWPSecurity_User_Login
         $insert = "INSERT INTO " . $login_fails_table . " (user_id, user_login, failed_login_date, login_attempt_ip) " .
                         "VALUES ('" . $user_id . "', '" . $username . "', now(), '" . $ip_range_str . "')";
         $result = $wpdb->query($insert);
-        if ($result == FALSE)
+        if ($result === FALSE)
         {
             $aio_wp_security->debug_logger->log_debug("Error inserting record into ".$login_fails_table,4);//Log the highly unlikely event of DB error
         }
@@ -266,16 +267,19 @@ class AIOWPSecurity_User_Login
         $email_msg = '';
         if ($email_notification_enabled == 1)
         {
-            $subject = '['.get_option('siteurl').'] '. __('Site Lockout Notification','aiowpsecurity');
-            $email_msg .= __('A lockdown event has occurred due to too many failed login attempts or invalid username:','aiowpsecurity')."\n";
-            $email_msg .= __('Username: '.($username?$username:"Unknown"),'aiowpsecurity')."\n";
-            $email_msg .= __('IP Address: '.$ip,'aiowpsecurity')."\n\n";
-            $email_msg .= __('IP Range: '.$ip_range.'.*','aiowpsecurity')."\n\n";
-            $email_msg .= __('Log into your site\'s WordPress administration panel to see the duration of the lockout or to unlock the user.','aiowpsecurity')."\n";
+            $subject = '['.get_option('siteurl').'] '. __('Site Lockout Notification','all-in-one-wp-security-and-firewall');
+            $email_msg .= __('A lockdown event has occurred due to too many failed login attempts or invalid username:','all-in-one-wp-security-and-firewall')."\n";
+            $email_msg .= __('Username: '.($username?$username:"Unknown"),'all-in-one-wp-security-and-firewall')."\n";
+            $email_msg .= __('IP Address: '.$ip,'all-in-one-wp-security-and-firewall')."\n\n";
+            $email_msg .= __('IP Range: '.$ip_range.'.*','all-in-one-wp-security-and-firewall')."\n\n";
+            $email_msg .= __('Log into your site\'s WordPress administration panel to see the duration of the lockout or to unlock the user.','all-in-one-wp-security-and-firewall')."\n";
             $site_title = get_bloginfo( 'name' );
             $from_name = empty($site_title)?'WordPress':$site_title;
             $email_header = 'From: '.$from_name.' <'.get_bloginfo('admin_email').'>' . "\r\n\\";
             $sendMail = wp_mail($to_email_address, $subject, $email_msg, $email_header);
+            if(FALSE === $sendMail){
+                $aio_wp_security->debug_logger->log_debug("Lockout notification email failed to send to ".$to_email_address." for IP ".$ip,4);
+            }
         }
     }
 
@@ -300,7 +304,7 @@ class AIOWPSecurity_User_Login
         }else{
             $query_param = array('aiowps_auth_key'=>$secret_rand_key);
             $wp_site_url = AIOWPSEC_WP_URL;
-            $unlock_link = add_query_arg($query_param, $wp_site_url); 
+            $unlock_link = esc_url(add_query_arg($query_param, $wp_site_url)); 
         }
         return $unlock_link;
     }
@@ -345,14 +349,17 @@ class AIOWPSecurity_User_Login
         global $aio_wp_security;
         $to_email_address = $email;
         $email_msg = '';
-        $subject = '['.get_option('siteurl').'] '. __('Unlock Request Notification','aiowpsecurity');
-        $email_msg .= __('You have requested for the account with email address '.$email.' to be unlocked. Please click the link below to unlock your account:','aiowpsecurity')."\n";
-        $email_msg .= __('Unlock link: '.$unlock_link,'aiowpsecurity')."\n\n";
-        $email_msg .= __('After clicking the above link you will be able to login to the WordPress administration panel.','aiowpsecurity')."\n";
+        $subject = '['.get_option('siteurl').'] '. __('Unlock Request Notification','all-in-one-wp-security-and-firewall');
+        $email_msg .= __('You have requested for the account with email address '.$email.' to be unlocked. Please click the link below to unlock your account:','all-in-one-wp-security-and-firewall')."\n";
+        $email_msg .= __('Unlock link: '.$unlock_link,'all-in-one-wp-security-and-firewall')."\n\n";
+        $email_msg .= __('After clicking the above link you will be able to login to the WordPress administration panel.','all-in-one-wp-security-and-firewall')."\n";
         $site_title = get_bloginfo( 'name' );
         $from_name = empty($site_title)?'WordPress':$site_title;
         $email_header = 'From: '.$from_name.' <'.get_bloginfo('admin_email').'>' . "\r\n\\";
         $sendMail = wp_mail($to_email_address, $subject, $email_msg, $email_header);
+        if(FALSE === $sendMail){
+            $aio_wp_security->debug_logger->log_debug("Unlock Request Notification email failed to send to ".$email,4);
+        }
     }
     
     /*
@@ -415,7 +422,7 @@ class AIOWPSecurity_User_Login
         $insert = "INSERT INTO " . $login_activity_table . " (user_id, user_login, login_date, login_ip) " .
                         "VALUES ('" . $user->ID . "', '" . $user_login . "', '" . $login_date_time . "', '" . $curr_ip_address . "')";
         $result = $wpdb->query($insert);
-        if ($result == FALSE)
+        if ($result === FALSE)
         {
             $aio_wp_security->debug_logger->log_debug("Error inserting record into ".$login_activity_table,4);//Log the highly unlikely event of DB error
         }
@@ -457,7 +464,7 @@ class AIOWPSecurity_User_Login
                         'login_ip' => $ip_addr,
                         'logout_date' => '0000-00-00 00:00:00');
         $result = $wpdb->update($login_activity_table, $data, $where);
-        if ($result == FALSE)
+        if ($result === FALSE)
         {
             $aio_wp_security->debug_logger->log_debug("Error inserting record into ".$login_activity_table,4);//Log the highly unlikely event of DB error
         }
@@ -515,12 +522,12 @@ class AIOWPSecurity_User_Login
         {
             switch ($logout_msg) {
                     case 'session_expired':
-                            $msg = sprintf(__('Your session has expired because it has been over %d minutes since your last login.', 'aiowpsecurity'), $aio_wp_security->configs->get_value('aiowps_logout_time_period'));
-                            $msg .= ' ' . __('Please log back in to continue.', 'aiowpsecurity');
+                            $msg = sprintf(__('Your session has expired because it has been over %d minutes since your last login.', 'all-in-one-wp-security-and-firewall'), $aio_wp_security->configs->get_value('aiowps_logout_time_period'));
+                            $msg .= ' ' . __('Please log back in to continue.', 'all-in-one-wp-security-and-firewall');
                             break;
                     case 'admin_user_changed':
-                            $msg = __('You were logged out because you just changed the "admin" username.', 'aiowpsecurity');
-                            $msg .= ' ' . __('Please log back in to continue.', 'aiowpsecurity');
+                            $msg = __('You were logged out because you just changed the "admin" username.', 'all-in-one-wp-security-and-firewall');
+                            $msg .= ' ' . __('Please log back in to continue.', 'all-in-one-wp-security-and-firewall');
                             break;
                     default:
             }
@@ -545,7 +552,7 @@ class AIOWPSecurity_User_Login
         
         $unlock_request_form .= '<div style="padding-bottom:10px;"><input type="hidden" name="aiowps-unlock-string-info" id="aiowps-unlock-string-info" value="'.$enc_result.'" />';
         $unlock_request_form .= '<input type="hidden" name="aiowps-unlock-temp-string" id="aiowps-unlock-temp-string" value="'.$current_time.'" />';
-        $unlock_request_form .= '<button type="submit" name="aiowps_unlock_request" class="button">'.__('Request Unlock', 'aiowpsecurity').'</button></div>';
+        $unlock_request_form .= '<button type="submit" name="aiowps_unlock_request" id="aiowps_unlock_request" class="button">'.__('Request Unlock', 'all-in-one-wp-security-and-firewall').'</button></div>';
         echo $unlock_request_form;
     }
     

@@ -4,7 +4,7 @@ Plugin Name: Easy Table
 Plugin URI: http://takien.com/
 Description: Create table in post, page, or widget in easy way.
 Author: Takien
-Version: 1.5.2
+Version: 1.6
 Author URI: http://takien.com/
 */
 
@@ -106,7 +106,7 @@ function __construct(){
 private function easy_table_base($return){
 	$easy_table_base = Array(
 				'name' 			=> 'Easy Table',
-				'version' 		=> '1.5.2',
+				'version' 		=> '1.6',
 				'plugin-domain'	=> 'easy-table'
 	);
 	return $easy_table_base[$return];
@@ -163,7 +163,9 @@ function easy_table_short_code($atts, $content="") {
 		'style'         => '', /*table inline style, since 1.0*/
 		'colalign'      => '', /*column align, ex: [table colalign="left|right|center"], @since 1.0*/
 		'colwidth'      => '', /*column width, ex: [table colwidth="100|200|300"], @since 1.0*/
-		'fixlinebreak'  => $this->option('fixlinebreak') /* fix linebreak on cell if terminator is not \n or \r @since 1.1.4 */
+		'fixlinebreak'  => $this->option('fixlinebreak'), /* fix linebreak on cell if terminator is not \n or \r @since 1.1.4 */
+		'exclude_row'   => '',
+		'exclude_col'   => '',
 	 ), $atts);
 	/**
 	* because clean_pre is deprecated since WordPress 3.4, then replace it manually
@@ -197,13 +199,23 @@ function easy_table_short_code_attr($atts){
 */
 private function csv_to_table($data,$args){
 	extract($args);
+	
+	/** check param value if it is expected to be boolean
+	* @since: 1.6 
+	**/
+	$th   = filter_var($th, FILTER_VALIDATE_BOOLEAN);
+	$trim = filter_var($trim, FILTER_VALIDATE_BOOLEAN);
+	if($tf !== 'last') {
+		$tf   = filter_var($tf, FILTER_VALIDATE_BOOLEAN);
+	}
+	
 	if( $this->option('csvfile') AND $file ){
 		/*$data = @file_get_contents($file);*/
 		/** use wp_remote_get
 		* @since 0.8
 		*/
 		$data = '';
-		$response = wp_remote_get($file);
+		$response = wp_remote_get( $file, array('sslverify'=>false) );
 		/**
 			notify if error reading file.
 			@since 0.9
@@ -237,6 +249,24 @@ private function csv_to_table($data,$args){
 	}
 	
 	if(empty($data)) return false;
+	
+	/** exclude row or col 
+	* @since: 1.6
+	**/
+	
+	 if( $exclude_row ) {
+		$exclude_row = explode(',',$exclude_row);
+			foreach( $exclude_row as $x_row ) {
+				if(isset($data[$x_row-1])) {
+					unset($data[$x_row-1]);
+				}
+			}
+	}
+	
+	if( $exclude_col ) {
+		$exclude_col = explode(',',$exclude_col);
+	}
+	
 	
 	$max_cols 	= count(max($data));
 
@@ -313,6 +343,15 @@ private function csv_to_table($data,$args){
 	foreach($data as $k=>$cols){ $r++;
 		//$cols = array_pad($cols,$max_cols,'');
 		
+		// exclude cols, @since: 1.6 
+		if(is_array($exclude_col)) {
+			foreach( $exclude_col as $x_col ) {
+				if(isset($cols[$x_col-1])) {
+					unset($cols[$x_col-1]);
+				}
+			}
+		}
+		
 		$output .= (($r==$tfpos) AND $tf) ? (($tf=='last')?'</tbody>':'').'<tfoot>': '';
 		$output .= "\r\n".'<tr>';
 
@@ -345,7 +384,8 @@ ai head, text to shown in the table head row, default is No.
 			* Add attribute for each cell
 			* @since 0.5
 			*/
-			preg_match('/\['.$this->option('attrtag').' ([^\\]\\/]*(?:\\/(?!\\])[^\\]\\/]*)*?)/',$cell,$matchattr);
+			//preg_match('/\['.$this->option('attrtag').' ([^\\]\\/]*(?:\\/(?!\\])[^\\]\\/]*)*?)/',$cell,$matchattr);
+			preg_match('/\['.$this->option('attrtag').' ([^\\]]*)/',$cell,$matchattr);
 			$attr = isset($matchattr[1]) ? $matchattr[1] : '';
 				/**
 				* extract $attr value
@@ -952,7 +992,7 @@ no,head1,head2,head3,head4
 [/table]	';
 $tableexample = $defaulttableexample;
 if(isset($_POST['test-easy-table'])){
-	$tableexample = $_POST['easy-table-test-area'];
+	$tableexample = strip_tags($_POST['easy-table-test-area'],'<p><a><img>');
 }
 
 if(isset($_POST['test-easy-table-reset'])){
@@ -975,12 +1015,14 @@ if(isset($_POST['test-easy-table-reset'])){
 <li><strong>tablesorter</strong>, <?php _e('default value','easy-table');?> <em>'false'</em></li>
 <li><strong>file</strong>, <?php _e('default value','easy-table');?> <em>'false'</em></li>
 <li><strong>sort</strong>, <?php _e('default value','easy-table');?> <em>''</em></li>
-<li class="new"><strong>trim</strong>, <?php _e('default value','easy-table');?> <em>false</em></li>
-<li class="new"><strong>style</strong>, <?php _e('default value','easy-table');?> <em>''</em></li>
-<li class="new"><strong>limit</strong>, <?php _e('default value','easy-table');?> <em>0</em></li>
-<li class="new"><strong>terminator</strong>, <?php _e('default value','easy-table');?> <em>\n</em></li>
-<li class="new"><strong>colalign</strong>, <?php _e('default value','easy-table');?> <em>''</em>, see example on the test area</li>
-<li class="new"><strong>colwidth</strong>, <?php _e('default value','easy-table');?> <em>''</em>, see example on the test area</li>
+<li><strong>trim</strong>, <?php _e('default value','easy-table');?> <em>false</em></li>
+<li><strong>style</strong>, <?php _e('default value','easy-table');?> <em>''</em></li>
+<li><strong>limit</strong>, <?php _e('default value','easy-table');?> <em>0</em></li>
+<li><strong>terminator</strong>, <?php _e('default value','easy-table');?> <em>\n</em></li>
+<li><strong>colalign</strong>, <?php _e('default value','easy-table');?> <em>''</em>, see example on the test area</li>
+<li><strong>colwidth</strong>, <?php _e('default value','easy-table');?> <em>''</em>, see example on the test area</li>
+<li><strong>exclude_row</strong>, <?php _e('default value','easy-table');?> <em>''</em>, comma separated value, ex: exclude_row="1,3,5"</li>
+<li><strong>exclude_col</strong>, <?php _e('default value','easy-table');?> <em>''</em>, comma separated value, ex: exclude_col="1,3,5"</li>
 </ol>
 <h3><?php printf('Example usage of %s parameter','sort','easy-table');?></h3>
 <p><em>sort</em> <?php _e('parameter is for initial sorting order. Value for each column separated by comma. See example below:','easy-table');?></p>
@@ -1074,53 +1116,7 @@ col4,col5,col6
 	</div>
 
 <?php elseif($_GET['gettab'] == 'support') : ?>
-<p><?php _e('I have tried to make this plugin can be used as easy as possible and documentation as complete as possible. However it is also possible that you are still confused. Therefore feel free to ask. I would be happy to answer.','easy-table');?></p>
-<p><?php _e('You can use this discussion to get support, request feature or reporting bug.','easy-table');?></p>
-<p><a target="_blank" href="http://takien.com/plugins/easy-table"><?php _e('Before you ask something, make sure you have read documentation here!','easy-table');?></a></p>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-/* <![CDATA[ */
-    var disqus_url = 'http://takien.com/1126/easy-table-is-the-easiest-way-to-create-table-in-wordpress.php';
-    var disqus_identifier = '1126 http://takien.com/?p=1126';
-    var disqus_container_id = 'disqus_thread';
-    var disqus_domain = 'disqus.com';
-    var disqus_shortname = 'takien';
-    var disqus_title = "Easy Table is The Easiest Way to Create Table in WordPress";
-        var disqus_config = function () {
-        var config = this; 
-        config.callbacks.preData.push(function() {
-            // clear out the container (its filled for SEO/legacy purposes)
-            document.getElementById(disqus_container_id).innerHTML = '';
-        });
-                config.callbacks.onReady.push(function() {
-            // sync comments in the background so we don't block the page
-            DISQUS.request.get('?cf_action=sync_comments&post_id=1126');
-        });
-                    };
-    var facebookXdReceiverPath = 'http://takien.com/wp-content/plugins/disqus-comment-system/xd_receiver.htm';
-/* ]]> */
-</script>
-
-<script type="text/javascript">
-/* <![CDATA[ */
-    var DsqLocal = {
-        'trackbacks': [
-        ],
-        'trackback_url': "http:\/\/takien.com\/1126\/easy-table-is-the-easiest-way-to-create-table-in-wordpress.php\/trackback"    };
-/* ]]> */
-</script>
-
-<script type="text/javascript">
-/* <![CDATA[ */
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
-    dsq.async = true;
-        dsq.src = 'http' + '://' + disqus_shortname + '.' + disqus_domain + '/embed.js?pname=wordpress&pver=2.72';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-/* ]]> */
-</script>
+<p>To ask question, please visit this plugin support on WordPress.org</p>
 <?php elseif ($_GET['gettab'] == 'about') : ?>
 <?php
 require_once(ABSPATH.'wp-admin/includes/plugin-install.php');
