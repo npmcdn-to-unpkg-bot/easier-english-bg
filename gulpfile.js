@@ -17,7 +17,7 @@ elixir(function(mix) {
 
         'style.scss'
     ], 'content/themes/easier-english-bg-theme/css/style.min.css')
-    //.sass('text-to-speech.scss', 'content/themes/easier-english-bg-theme/css/text-to-speech.min.css')
+    .sass('text-to-speech.scss', 'content/themes/easier-english-bg-theme/css/text-to-speech.min.css')
     /**
      * Combine the js files into a single file
      * http://laravel.com/docs/5.1/elixir#javascript
