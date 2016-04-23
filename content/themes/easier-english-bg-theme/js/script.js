@@ -6,6 +6,24 @@ $(document).ready(function(){
 	// Build and init the mobile menu, see mobile-menu.js
 	EEApp.MobileMenu();
 
+
+	/**
+	 * Show / hide header when user scrolls, see:
+	 * https://github.com/WickyNilliams/headroom.js
+	 */
+	var header = $('#masthead').get(0);
+	var headroom = new Headroom(header, {
+		'offset': 205,
+		'tolerance': 5,
+		'classes': {
+			'initial': 'animated',
+			'pinned': 'swingInX',
+			'unpinned': 'swingOutX'
+		}
+	});
+	headroom.init();
+
+
 	//Exam START:
 	function whereAmI() {
 		var location = window.location.href.match(/([^/])+/g);

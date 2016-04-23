@@ -8,20 +8,16 @@ elixir(function(mix) {
     mix
     /**
      * Compile the main .scss file to .css
+     * and combine the css files into a single file.
      * During the compilation elixir AutoPrefixes the css
      * http://laravel.com/docs/5.1/elixir#sass
      */
-    .sass('style.scss', 'content/themes/easier-english-bg-theme/css/style.css')
-    .sass('text-to-speech.scss', 'content/themes/easier-english-bg-theme/css/text-to-speech.min.css')
-    /**
-     * Combine the css files into a single file
-     * http://laravel.com/docs/5.1/elixir#plain-css
-     */
-    .styles([
+    .sass([
         '../../../lib/normalize-css/normalize.css',
-        'style.css'
-    ], 'content/themes/easier-english-bg-theme/css/style.min.css')
 
+        'style.scss'
+    ], 'content/themes/easier-english-bg-theme/css/style.min.css')
+    //.sass('text-to-speech.scss', 'content/themes/easier-english-bg-theme/css/text-to-speech.min.css')
     /**
      * Combine the js files into a single file
      * http://laravel.com/docs/5.1/elixir#javascript
@@ -29,6 +25,9 @@ elixir(function(mix) {
     .scripts([
         'jquery.mmenu.min.js',
         '../../../plugins/mailchimp/js/jquery.form.min.js',
+
+        // Hiding your header until you need it
+        '../../../lib/headroom.js/dist/headroom.js',
 
         // JS responsible for the Speech Synthesis API integration
         'text-to-speech.js',
