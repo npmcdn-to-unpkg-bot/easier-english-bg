@@ -1,0 +1,49 @@
+/**
+ * Slightly modified effects from the fantastic animate.css,
+ * to make the Headroom effect more awesome.
+ * Here's the source:
+ * https://github.com/WickyNilliams/headroom.js/tree/gh-pages/assets/styles/examples
+ */
+.animated {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    will-change: transform, opacity;
+}
+
+@keyframes swingInX {
+    0% {
+        transform: perspective(400px) rotateX(-90deg);
+    }
+
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+    }
+}
+
+.animated.swingInX {
+  transform-origin: top;
+
+  backface-visibility: visible !important;
+  animation-name: swingInX;
+}
+
+@keyframes swingOutX {
+    0% {
+        transform: perspective(400px) rotateX(0deg);
+    }
+  100% {
+        transform: perspective(400px) rotateX(-90deg);
+    }
+}
+
+.animated.swingOutX {
+    -webkit-transform-origin: top;
+    -webkit-animation-name: swingOutX;
+    -webkit-backface-visibility: visible !important;
+    -moz-animation-name: swingOutX;
+    -moz-backface-visibility: visible !important;
+    -o-animation-name: swingOutX;
+    -o-backface-visibility: visible !important;
+    animation-name: swingOutX;
+    backface-visibility: visible !important;
+}
