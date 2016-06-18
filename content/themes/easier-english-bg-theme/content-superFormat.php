@@ -102,7 +102,7 @@
                 </p>
                 <img class="pb" src="https://media.giphy.com/media/dBHyy0gA87NTy/giphy.gif" alt="Giphy Fail Jump" />
                 <p>
-                    Ще се радваме ако <a href="http://easierenglish.bg/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
+                    Ще се радваме да <a href="http://easierenglish.bg/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
                 </p>
             </div>
 
