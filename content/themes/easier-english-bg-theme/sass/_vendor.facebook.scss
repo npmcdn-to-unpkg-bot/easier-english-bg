@@ -1,0 +1,12 @@
+/**
+ * Fix: After a user triggers the like button,
+ * the follow-up popup gets cut-off.
+ */
+.fb-like {
+    width: 100%;
+}
+.fb_iframe_widget {
+    span {
+        position: static !important;
+    }
+}
