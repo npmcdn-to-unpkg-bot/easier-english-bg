@@ -1,0 +1,30 @@
+.hidden {
+    display: none !important;
+}
+
+.border-pill {
+    border-radius: 5px;
+}
+
+
+/**
+ * Padding helper classes, inspired by:
+ * https://github.com/inuitcss/trumps.spacing
+ */
+$padding-default: 15px;
+
+.p     { padding:          $padding-default !important; }
+.pt    { padding-top:      $padding-default !important; }
+.pr    { padding-right:    $padding-default !important; }
+.pb    { padding-bottom:   $padding-default !important; }
+.pl    { padding-left:     $padding-default !important; }
+.ph    { padding-right:    $padding-default !important; padding-left:    $padding-default !important; }
+.pv    { padding-top:      $padding-default !important; padding-bottom:  $padding-default !important; }
+
+.p0    { padding:          0 !important; }
+.pt0   { padding-top:      0 !important; }
+.pr0   { padding-right:    0 !important; }
+.pb0   { padding-bottom:   0 !important; }
+.pl0   { padding-left:     0 !important; }
+.ph0   { padding-right:    0 !important; padding-left:     0 !important; }
+.pv0   { padding-top:      0 !important; padding-bottom:   0 !important; }
