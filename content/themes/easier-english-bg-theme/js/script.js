@@ -8,6 +8,37 @@ $(document).ready(function(){
 
 
 	/**
+	 * Dead-simple feedback / social share form,
+	 * based on the user input.
+	 */
+	$feedbackBtnsHolder = $('#feedback-btns-holder');
+	$('#positive-feedback').on('click', function(){
+		// Show social box
+		$feedbackBtnsHolder.addClass('hidden');
+		$('#social-box').removeClass('hidden');
+
+		// Then report it:
+		ga('send', 'event', {
+			eventCategory: 'Feedback',
+			eventAction: 'reply',
+			eventLabel: 'Yes'
+		});
+	});
+	$('#negative-feedback').on('click', function(){
+		// Show feedback box
+		$feedbackBtnsHolder.addClass('hidden');
+		$('#suggestion-box').removeClass('hidden');
+
+		// Then report it:
+		ga('send', 'event', {
+			eventCategory: 'Feedback',
+			eventAction: 'reply',
+			eventLabel: 'No'
+		});
+	});
+
+
+	/**
 	 * Show / hide header when user scrolls, see:
 	 * https://github.com/WickyNilliams/headroom.js
 	 */
