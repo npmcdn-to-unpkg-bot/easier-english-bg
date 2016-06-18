@@ -74,8 +74,6 @@
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
 
-            <br />
-
             <h4 class="question-form">Полезен ли ти беше урокът?</h4>
             <div id="feedback-btns-holder">
                 <button id="positive-feedback" type="button" class="button">Да</button>
@@ -99,11 +97,11 @@
                 </p>
             </div>
             <div id="suggestion-box" class="highlight border-pill p hidden">
-                <p class="pb0">
+                <p>
                     Съжаляваме, че сме те разочаровали :(
                 </p>
                 <img class="pb" src="https://media.giphy.com/media/dBHyy0gA87NTy/giphy.gif" alt="Giphy Fail Jump" />
-                <p class="pb0">
+                <p>
                     Ще се радваме ако <a href="http://easierenglish.bg/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
                 </p>
             </div>
