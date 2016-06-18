@@ -16,11 +16,25 @@ $(document).ready(function(){
 		// Show social box
 		$feedbackBtnsHolder.addClass('hidden');
 		$('#social-box').removeClass('hidden');
+
+		// Then report it:
+		ga('send', 'event', {
+			eventCategory: 'Feedback',
+			eventAction: 'reply',
+			eventLabel: 'Yes'
+		});
 	});
 	$('#negative-feedback').on('click', function(){
 		// Show feedback box
 		$feedbackBtnsHolder.addClass('hidden');
 		$('#suggestion-box').removeClass('hidden');
+
+		// Then report it:
+		ga('send', 'event', {
+			eventCategory: 'Feedback',
+			eventAction: 'reply',
+			eventLabel: 'No'
+		});
 	});
 
 
