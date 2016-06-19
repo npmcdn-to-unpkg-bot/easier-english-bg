@@ -1638,6 +1638,9 @@ footer.entry-meta {
     background-color: transparent;
     border-bottom: 0;
 }
+.author-card .profile-image-link {
+    border-bottom: 0;
+}
 
 .author-card .personal_linked {
     top: 120px;
@@ -2034,7 +2037,7 @@ img#wpstats {
 
 hr {
     border: none;
-    background-color: #BBB;
+    background-color: #DDD;
     height: 1px;
     margin: 20px 0;
 }
