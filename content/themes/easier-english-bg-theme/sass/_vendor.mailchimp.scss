@@ -1,0 +1,10 @@
+/**
+ * Overwrite MailChimp form styles
+ */
+.mc_input {
+    display: block;
+    max-width: 300px;
+}
+.mc_input[type=email] {
+    max-width: 275px;
+}
