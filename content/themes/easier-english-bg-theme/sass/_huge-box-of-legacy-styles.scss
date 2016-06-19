@@ -1620,10 +1620,25 @@ footer.entry-meta {
     margin: 15px 10px 0 0;
     border-radius: 50%;
     border: 1px solid #CCC;
-    padding: 5px;
     background-color: #fff;
     transition: all .4s;
 }
+
+/**
+ * Okay, I know.
+ * I will refactor this once I have a change.
+ *
+ * For the Possessive Pronouns And Possessive Adjectives lesson,
+ * there are 2 authors. I need this padding to override the post's one.
+ */
+.author-card .author-image {
+    padding: 5px !important;
+}
+.author-card .profile-image-link:hover {
+    background-color: transparent;
+    border-bottom: 0;
+}
+
 .author-card .personal_linked {
     top: 120px;
     left: 85px;
@@ -1636,6 +1651,7 @@ footer.entry-meta {
 .author-card p {
     font-style: italic;
 }
+
 .author-card .profile-image-link:hover .author-image {
     transform: rotate(360deg);
     -ms-transform: rotate(360deg);
