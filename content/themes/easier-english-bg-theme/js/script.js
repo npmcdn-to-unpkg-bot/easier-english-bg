@@ -39,6 +39,16 @@ $(document).ready(function(){
 
 
 	/**
+	 * Toggle show/hide email signup form
+	 */
+	$('#show-email-signup').on('click', function(){
+		$('#email-signup')
+			.toggleClass('hidden')
+			.find('input[type=email]').focus();
+	});
+
+
+	/**
 	 * Show / hide header when user scrolls, see:
 	 * https://github.com/WickyNilliams/headroom.js
 	 */
