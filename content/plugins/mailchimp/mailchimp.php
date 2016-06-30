@@ -1440,7 +1440,10 @@ function mailchimpSF_signup_submit() {
 		$msg .= '</span>';
 	}
 	else {
-		$msg = "<strong class='mc_success_msg'>".esc_html(__("Супер, записан си! Изпратихме ти мейл, за да потвърдиш абонамента :)", 'mailchimp_i18n'))."</strong>";
+		$msg = "<strong class='mc_success_msg'>
+				Окей! Последна стъпка:<br />
+				Всеки момент ще получиш мейл от нас, от където е можеш да активираш абонамента си.
+				</strong>";
 	}
 
 	// Set our global message
