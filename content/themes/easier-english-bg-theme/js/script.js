@@ -41,10 +41,20 @@ $(document).ready(function(){
 	/**
 	 * Toggle show/hide email signup form
 	 */
+	var $emailSignup = $('#email-signup');
 	$('#show-email-signup').on('click', function(){
-		$('#email-signup')
+		$emailSignup
 			.toggleClass('hidden')
 			.find('input[type=email]').focus();
+
+		// When the user opens the form, report it
+		if ($emailSignup.is(':visible')) {
+			ga('send', 'event', {
+				eventCategory: 'Subscription',
+				eventAction: 'open email signup form',
+				eventLabel: 'PS'
+			});
+		}
 	});
 
 
