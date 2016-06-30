@@ -74,37 +74,49 @@
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
 
-            <h4 class="question-form">Полезен ли ти беше урокът?</h4>
-            <div id="feedback-btns-holder">
-                <button id="positive-feedback" type="button" class="button">Да</button>
-                <button id="negative-feedback" type="button" class="btn--default">Не</button>
+            <div class="pb">
+                <h4 class="question-form">Полезен ли ти беше урокът?</h4>
+                <div id="feedback-btns-holder">
+                    <button id="positive-feedback" type="button" class="button">Да</button>
+                    <button id="negative-feedback" type="button" class="btn--default">Не</button>
+                </div>
+
+                <div id="social-box" class="highlight border-pill p hidden">
+                    <p>
+                        Екип от доброволци отделя от свободното си време между 16 и 28 часа, за да подготви и публикува урок като този. Подкрепи ни, за да оцениш труда ни.
+                    </p>
+                    <p>
+                        Харесай / сподели урока:
+                        <div class="fb-like" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                    </p>
+
+                    <p>
+                        Последвай ни в нашата фен страница:
+                        <div class="fb-page" data-href="https://www.facebook.com/easierenglish.bg/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/easierenglish.bg/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/easierenglish.bg/">ЕasiеrЕnglish.BG</a></blockquote>
+                        </div>
+                    </p>
+                </div>
+                <div id="suggestion-box" class="highlight border-pill p hidden">
+                    <p>
+                        Съжаляваме, че сме те разочаровали :(
+                    </p>
+                    <img class="pb" src="https://media.giphy.com/media/dBHyy0gA87NTy/giphy.gif" alt="Giphy Fail Jump" />
+                    <p>
+                        Ще се радваме да <a href="http://easierenglish.bg/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
+                    </p>
+                </div>
             </div>
 
-            <div id="social-box" class="highlight border-pill p hidden">
-                <p>
-                    Екип от доброволци отделя от свободното си време между 16 и 28 часа, за да подготви и публикува урок като този. Подкрепи ни, за да оцениш труда ни.
-                </p>
-                <p>
-                    Харесай / сподели урока:
-                    <div class="fb-like" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-                </p>
+            <p class="pt">
+                PS: Можеш да се абонираш по мейл и да получаваш известие за всеки нов урок.<br />
+                Ако желаеш, <a id="show-email-signup" href="javascript:;">въведи мейла си тук</a>.
+            </p>
 
-                <p>
-                    Последвай ни в нашата фен страница:
-                    <div class="fb-page" data-href="https://www.facebook.com/easierenglish.bg/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/easierenglish.bg/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/easierenglish.bg/">ЕasiеrЕnglish.BG</a></blockquote>
-                    </div>
-                </p>
+            <div id="email-signup" class="highlight border-pill p hidden">
+                <?php mailchimpSF_signup_form(); ?>
             </div>
-            <div id="suggestion-box" class="highlight border-pill p hidden">
-                <p>
-                    Съжаляваме, че сме те разочаровали :(
-                </p>
-                <img class="pb" src="https://media.giphy.com/media/dBHyy0gA87NTy/giphy.gif" alt="Giphy Fail Jump" />
-                <p>
-                    Ще се радваме да <a href="http://easierenglish.bg/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
-                </p>
-            </div>
+
 
         </div><!-- .entry-content -->
 
