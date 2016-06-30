@@ -86,8 +86,8 @@
                         Екип от доброволци отделя от свободното си време между 16 и 28 часа, за да подготви и публикува урок като този. Подкрепи ни, за да оцениш труда ни.
                     </p>
                     <p>
-                        Харесай / сподели урока:
-                        <div class="fb-like" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                        Харесай урока:
+                        <div class="fb-like" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
                     </p>
 
                     <p>
