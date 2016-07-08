@@ -27,10 +27,10 @@
                     if (isset($image_url)) {
                         $image_url = str_replace("sz=50", "sz=240", $image_url);
                     } else {
-                        $image_url = "http://www.gravatar.com/avatar/" . $author_email . "?s=240";
+                        $image_url = "//www.gravatar.com/avatar/" . $author_email . "?s=240";
                     }
 
-                    $author_info = file_get_contents( 'http://www.gravatar.com/' . $author_email . '.php' );
+                    $author_info = file_get_contents( '//www.gravatar.com/' . $author_email . '.php' );
                     $author_profile = unserialize( $author_info );
 
                     if ( is_array( $author_profile ) && isset( $author_profile['entry'] ) ) {
