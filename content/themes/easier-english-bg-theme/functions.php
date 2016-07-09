@@ -686,3 +686,17 @@ remove_action('wp_head', 'wlwmanifest_link');
 //remove_action('wp_head', 'start_post_rel_link', 10, 0);
 //remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 //remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+
+/**
+ * Force URLs in srcset attributes into HTTPS scheme.
+ * Fixes a bug in responsive images in Wordpress 4.4, see:
+ * https://wptavern.com/how-to-fix-images-not-loading-in-wordpress-4-4-while-using-ssl
+ */
+function ssl_srcset( $sources ) {
+    foreach ( $sources as &$source ) {
+        $source['url'] = set_url_scheme( $source['url'], 'https' );
+    }
+    return $sources;
+}
+
+add_filter( 'wp_calculate_image_srcset', 'ssl_srcset' );
