@@ -29,7 +29,7 @@
             mobileNavHtml += '</ul></li>';
 
             // Add search field
-            mobileNavHtml += '<li><form role="search" method="get" class="searchform" action="http://easierenglish.bg/"><input type="text" value="" name="s" id="s" placeholder="Потърси урок..."></form></li>';
+            mobileNavHtml += '<li><form role="search" method="get" class="searchform" action="//easierenglish.bg/"><input type="text" value="" name="s" id="s" placeholder="Потърси урок..."></form></li>';
 
             mobileNavHtml += '</ul></nav>';
 

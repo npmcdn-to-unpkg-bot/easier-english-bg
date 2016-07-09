@@ -179,10 +179,10 @@ $(document).ready(function(){
 
 		//Show the result:
 		var share_url         	=    window.location.href;
-		var share_image      	=    "http://placehold.it/400x400/ACE1AF/FFF%26text=EXERCISE";
+		var share_image      	=    "//dummyimage.com/400x400/ACE1AF/FFFFFF?text=EXERCISE";
 		var title               =    "Упражнение по английски език | EasierEnglish.BG";
 		var description       	=    "Резултат: " + correct + " верни отговора от общо " + questions_count + " въпроса.";
-		var FB_url             	=    "http://www.facebook.com/sharer.php?s=100&p[title]="+(title)+"&p[summary]="+description+"&p[url]="+encodeURIComponent(share_url)+"&p[images][0]="+(share_image);
+		var FB_url             	=    "//www.facebook.com/sharer.php?s=100&p[title]="+(title)+"&p[summary]="+description+"&p[url]="+encodeURIComponent(share_url)+"&p[images][0]="+(share_image);
 		jQuery("#ref_fb").attr('href', FB_url);
 
 		var questions_count = $("#exam li").length;

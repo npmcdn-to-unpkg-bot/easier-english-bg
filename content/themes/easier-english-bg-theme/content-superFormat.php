@@ -27,10 +27,10 @@
                     if (isset($image_url)) {
                         $image_url = str_replace("sz=50", "sz=240", $image_url);
                     } else {
-                        $image_url = "http://www.gravatar.com/avatar/" . $author_email . "?s=240";
+                        $image_url = "//www.gravatar.com/avatar/" . $author_email . "?s=240";
                     }
 
-                    $author_info = file_get_contents( 'http://www.gravatar.com/' . $author_email . '.php' );
+                    $author_info = file_get_contents( '//www.gravatar.com/' . $author_email . '.php' );
                     $author_profile = unserialize( $author_info );
 
                     if ( is_array( $author_profile ) && isset( $author_profile['entry'] ) ) {
@@ -103,7 +103,7 @@
                     </p>
                     <img class="pb" src="https://media.giphy.com/media/dBHyy0gA87NTy/giphy.gif" alt="Giphy Fail Jump" />
                     <p>
-                        Ще се радваме да <a href="http://easierenglish.bg/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
+                        Ще се радваме да <a href="/свържи-се-с-нас/">ни пишеш</a> какво можем да подобрим.
                     </p>
                 </div>
             </div>
