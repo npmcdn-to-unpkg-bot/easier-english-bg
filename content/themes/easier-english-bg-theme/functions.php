@@ -689,6 +689,7 @@ remove_action('wp_head', 'wlwmanifest_link');
 
 /**
  * Force URLs in srcset attributes into HTTPS scheme.
+ * Fixes a bug in responsive images in Wordpress 4.4, see:
  * https://wptavern.com/how-to-fix-images-not-loading-in-wordpress-4-4-while-using-ssl
  */
 function ssl_srcset( $sources ) {
