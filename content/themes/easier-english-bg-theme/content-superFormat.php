@@ -87,7 +87,16 @@
                     </p>
                     <p>
                         Харесай урока:
-                        <div class="fb-like" data-href="<?= get_permalink( $id ) ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                        <?php
+                            /**
+                             * Migrating urls to https breaks the fb like count :(
+                             * That's why reference the data-href fb button link to http.
+                             * Sadly, this is the only way to keep the like count.
+                             *
+                             * http://stackoverflow.com/questions/12229801/facebook-like-on-https
+                             */
+                        ?>
+                        <div class="fb-like" data-href="<?= 'http://easierenglish.bg' . $_SERVER['REQUEST_URI'] ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
                     </p>
 
                     <p>
