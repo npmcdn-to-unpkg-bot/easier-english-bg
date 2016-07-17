@@ -148,7 +148,7 @@
                         }
                     ?>
                     <h5><?= get_the_author() . ", <a target='_blank' href=" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . ">" . $author_posts . "</a>"; ?></h5>
-                    <p><?= get_the_author_meta('description'); ?></p>
+                    <p><?= nl2br(get_the_author_meta('description')); ?></p>
                 </div>
             <?php } ?>
 
