@@ -3,6 +3,6 @@
   "version": "0.2.0",
   "dependencies": {
     "normalize-css": "~3.0.3",
-    "headroom.js": "https://npmcdn.com/headroom.js/bower.zip"
+    "headroom.js": "https://unpkg.com/headroom.js/bower.zip"
   }
 }
